@@ -18,6 +18,9 @@
 		A9C556442949CBAF008B465E /* SpeakersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556432949CBAF008B465E /* SpeakersView.swift */; };
 		A9C556462949CBBE008B465E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556452949CBBE008B465E /* SearchView.swift */; };
 		A9C556492949DF85008B465E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556482949DF85008B465E /* CustomColors.swift */; };
+		A9C5564C2949E3C2008B465E /* TopTabBarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564B2949E3C2008B465E /* TopTabBarButtonView.swift */; };
+		A9C5564E2949E770008B465E /* TopTabBarButtonsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564D2949E770008B465E /* TopTabBarButtonsContainerView.swift */; };
+		A9C556502949EB4C008B465E /* TopTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564F2949EB4C008B465E /* TopTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		A9C556432949CBAF008B465E /* SpeakersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersView.swift; sourceTree = "<group>"; };
 		A9C556452949CBBE008B465E /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		A9C556482949DF85008B465E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		A9C5564B2949E3C2008B465E /* TopTabBarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarButtonView.swift; sourceTree = "<group>"; };
+		A9C5564D2949E770008B465E /* TopTabBarButtonsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarButtonsContainerView.swift; sourceTree = "<group>"; };
+		A9C5564F2949EB4C008B465E /* TopTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,9 +155,9 @@
 		A9C5563F2949CAA3008B465E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A9C556412949CBA5008B465E /* TalksView.swift */,
-				A9C556432949CBAF008B465E /* SpeakersView.swift */,
-				A9C556452949CBBE008B465E /* SearchView.swift */,
+				A9C55653294A10FD008B465E /* Talks */,
+				A9C55654294A1107008B465E /* Speakers */,
+				A9C55655294A1115008B465E /* Search */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +175,41 @@
 				A9C556482949DF85008B465E /* CustomColors.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		A9C5564A2949E3A8008B465E /* TopTabBarHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5564B2949E3C2008B465E /* TopTabBarButtonView.swift */,
+				A9C5564D2949E770008B465E /* TopTabBarButtonsContainerView.swift */,
+			);
+			path = TopTabBarHelpers;
+			sourceTree = "<group>";
+		};
+		A9C55653294A10FD008B465E /* Talks */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5564A2949E3A8008B465E /* TopTabBarHelpers */,
+				A9C556412949CBA5008B465E /* TalksView.swift */,
+				A9C5564F2949EB4C008B465E /* TopTabBarView.swift */,
+			);
+			path = Talks;
+			sourceTree = "<group>";
+		};
+		A9C55654294A1107008B465E /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				A9C556432949CBAF008B465E /* SpeakersView.swift */,
+			);
+			path = Speakers;
+			sourceTree = "<group>";
+		};
+		A9C55655294A1115008B465E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A9C556452949CBBE008B465E /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,9 +345,12 @@
 				A9C556462949CBBE008B465E /* SearchView.swift in Sources */,
 				A9C556422949CBA5008B465E /* TalksView.swift in Sources */,
 				A9C556172949C26B008B465E /* ContentView.swift in Sources */,
+				A9C556502949EB4C008B465E /* TopTabBarView.swift in Sources */,
 				A9C556442949CBAF008B465E /* SpeakersView.swift in Sources */,
+				A9C5564E2949E770008B465E /* TopTabBarButtonsContainerView.swift in Sources */,
 				A9C556492949DF85008B465E /* CustomColors.swift in Sources */,
 				A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */,
+				A9C5564C2949E3C2008B465E /* TopTabBarButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
