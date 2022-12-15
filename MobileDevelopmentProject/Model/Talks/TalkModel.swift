@@ -8,18 +8,6 @@
 import Foundation
 import SwiftUI
 
-// MARK: - TalkAPIResponse
-struct TalkAPIResponse: Codable {
-    let records: [TalkRecord]
-}
-
-// MARK: - Record
-struct TalkRecord: Codable {
-    let id, createdTime: String
-    let fields: Talk
-}
-
-// MARK: - Fields
 struct Talk: Codable {
     let location, activity, type: String
     let start, end: Date
@@ -35,7 +23,9 @@ struct Talk: Codable {
     }
 }
 
-// MARK: - Convert event type to a Color
+/**
+ Lookup table for the colors associated to event types 
+ */
 struct TalkTypeColor {
     static public func get(_ eventType: String) -> Color {
         switch(eventType){

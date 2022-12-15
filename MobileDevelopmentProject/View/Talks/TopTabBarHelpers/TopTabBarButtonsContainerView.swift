@@ -32,9 +32,6 @@ struct TopTabBarButtonsContainerView: View {
 
 struct TopTabBarButtonsContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            TopTabBarButtonsContainerView(tabIndex: .constant(0), titles: ["FirstView", "SecondView"])
-            TopTabBarButtonsContainerView(tabIndex: .constant(1), titles: ["FirstView", "SecondView"])
-        }
+        TopTabBarButtonsContainerView(tabIndex: .constant(0), titles: ["FirstView", "SecondView"])
     }
 }

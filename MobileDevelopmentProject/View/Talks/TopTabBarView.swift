@@ -13,23 +13,34 @@ struct TopTabBarView: View {
     var titles = ["Right now", "Up next"]
     
     var body: some View {
-        VStack{
+        VStack(spacing:0){
             TopTabBarButtonsContainerView(tabIndex: $tabIndex, titles: self.titles)
-            if (talkViewModel.loaded) {
-                Text(talkViewModel.errorMessage ?? talkViewModel.listTalks[0].fields.activity)
-            } else {
-                ProgressView()
+            ScrollView {
+                if (talkViewModel.loaded) {
+                    if((talkViewModel.errorMessage) != nil){
+//                        Text("An error occured. Please check your internet connection.")
+                        Text(talkViewModel.errorMessage!)
+                    } else {
+                        if(tabIndex == 0){
+                            TalksListView(talks: talkViewModel.listTalks) { record in
+                                return record.fields.start < Date.now && record.fields.end > Date.now
+                            }
+                        }
+                        if(tabIndex == 1){
+                            TalksListView(talks: talkViewModel.listTalks) { record in
+                                return record.fields.start > Date.now
+                            }
+                        }
+                    }
+                } else {
+                    ProgressView()
+                }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .onAppear {
             talkViewModel.fetchTalks()
         }
-        .gesture(DragGesture(minimumDistance: 20, coordinateSpace: .local).onEnded({ value in
-            if value.translation.height > 0 {
-                talkViewModel.fetchTalks()
-            }
-        }))
     }
 }
 
