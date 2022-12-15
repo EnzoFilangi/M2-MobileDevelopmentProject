@@ -32,11 +32,12 @@ struct TopTabBarView: View {
                 } else {
                     ProgressView()
                 }
-            }
+            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .onAppear {
+        .refreshable {
             talkViewModel.fetchTalks()
+            UIImpactFeedbackGenerator(style: .soft).impactOccurred()
         }
     }
 }

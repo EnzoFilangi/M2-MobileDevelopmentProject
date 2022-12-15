@@ -11,21 +11,43 @@ class TalksViewModel: ObservableObject {
     
     private var speakerIdToSpeakerNameMap: [String: String] = [:]
     private var unresolvedTalks: [APIRecord<Talk>] = []
+    private var fetching = false;
 
     @Published var httpError: HttpError? = nil
     @Published var errorMessage: String? = nil
     @Published var listTalks: [APIRecord<Talk>] = []
     
+    init(){
+        fetchTalks()
+    }
+    
     /**
      Triggers the process of fetching the list of talks
      */
     func fetchTalks() {
-        resetData()
+        // Prevent spam
+        guard !fetching else {
+            return
+        }
+        
+        prepareFetch()
         
         // Get all talks, sorted ascending on the "Start" column
         let url = "https://api.airtable.com/v0/appLxCaCuYWnjaSKB/%F0%9F%93%86%20Schedule?sort%5B0%5D%5Bfield%5D=Start"
                
         DataSource.get(url: url, callback: self.handleTalksResponse)
+    }
+    
+    /**
+     Prepares the class for a fetch operation by resetting any error and temporary variables
+     */
+    private func prepareFetch() {
+        fetching = true
+        speakerIdToSpeakerNameMap = [:]
+        unresolvedTalks = []
+        errorMessage = nil
+        httpError = nil
+        // Do not erase listTalks to leave a cache for the UI while the operation is in progress
     }
     
     /**
@@ -96,12 +118,15 @@ class TalksViewModel: ObservableObject {
             return
         }
         
+        // Re-enable refresh
+        fetching = false
+        
         // Once all references have been resolved, copy them into the talks in lieu of the references
         // For each talk, translate each list of speaker ids into a list of speaker names and asign it to the talk's speakers
-        unresolvedTalks.forEach { talk in
-            var talk = talk
+        listTalks = unresolvedTalks.map { talk in
+            var talk = talk // Allow mutating talk
             talk.fields.speakers = talk.fields.speakers?.map{speakerIdToSpeakerNameMap[$0] ?? ""}
-            listTalks.append(talk)
+            return talk
         }
     }
     
@@ -116,17 +141,6 @@ class TalksViewModel: ObservableObject {
             }
         }
         return true
-    }
-    
-    /**
-     Sets all class fields to their default values
-     */
-    private func resetData(){
-        speakerIdToSpeakerNameMap = [:]
-        unresolvedTalks = []
-        listTalks = []
-        errorMessage = nil
-        httpError = nil
     }
     
     /**
