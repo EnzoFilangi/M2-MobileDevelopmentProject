@@ -16,19 +16,17 @@ struct TopTabBarView: View {
         VStack(spacing:0){
             TopTabBarButtonsContainerView(tabIndex: $tabIndex, titles: self.titles)
             ScrollView {
-                if (talkViewModel.loaded) {
-                    if(talkViewModel.errorMessage != nil || talkViewModel.httpError != nil){
-                        Text("An error occured. Please check your internet connection.").padding()
-                    } else {
-                        if(tabIndex == 0){
-                            TalksListView(talks: talkViewModel.listTalks) { record in
-                                return record.fields.start < Date.now && record.fields.end > Date.now
-                            }
+                if(talkViewModel.errorMessage != nil || talkViewModel.httpError != nil){
+                    Text("An error occured. Please check your internet connection.").padding()
+                } else if (talkViewModel.listTalks.count > 0) {
+                    if(tabIndex == 0){
+                        TalksListView(talks: talkViewModel.listTalks) { record in
+                            return record.fields.start < Date.now && record.fields.end > Date.now
                         }
-                        if(tabIndex == 1){
-                            TalksListView(talks: talkViewModel.listTalks) { record in
-                                return record.fields.start > Date.now
-                            }
+                    }
+                    if(tabIndex == 1){
+                        TalksListView(talks: talkViewModel.listTalks) { record in
+                            return record.fields.start > Date.now
                         }
                     }
                 } else {

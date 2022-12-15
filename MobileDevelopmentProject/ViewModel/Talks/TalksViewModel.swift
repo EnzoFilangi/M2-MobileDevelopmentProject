@@ -10,8 +10,8 @@ import Foundation
 class TalksViewModel: ObservableObject {
     
     private var speakerIdToSpeakerNameMap: [String: String] = [:]
-    
-    @Published var loaded = false
+    private var unresolvedTalks: [APIRecord<Talk>] = []
+
     @Published var httpError: HttpError? = nil
     @Published var errorMessage: String? = nil
     @Published var listTalks: [APIRecord<Talk>] = []
@@ -38,7 +38,7 @@ class TalksViewModel: ObservableObject {
                 return
             }
             
-            self.listTalks = records
+            self.unresolvedTalks = records
             self.resolveSpeakerNames()
         }
     }
@@ -48,7 +48,7 @@ class TalksViewModel: ObservableObject {
      */
     private func resolveSpeakerNames(){
         // Get a list of every unique speaker id
-        speakerIdToSpeakerNameMap = buildEmptySpeakerMap(records: listTalks)
+        speakerIdToSpeakerNameMap = buildEmptySpeakerMap(records: unresolvedTalks)
         
         // Fetch each unique speaker and save their name
         let speakerUrl = "https://api.airtable.com/v0/appLxCaCuYWnjaSKB/%F0%9F%8E%A4%20Speakers/"
@@ -92,19 +92,17 @@ class TalksViewModel: ObservableObject {
             return
         }
         
-        if (!isSpeakerMapFull()){
-            loaded = false
+        guard isSpeakerMapFull() else {
             return
         }
         
         // Once all references have been resolved, copy them into the talks in lieu of the references
         // For each talk, translate each list of speaker ids into a list of speaker names and asign it to the talk's speakers
-        for (index, value) in listTalks.enumerated() {
-            listTalks[index].fields.speakers = value.fields.speakers?.map{speakerIdToSpeakerNameMap[$0] ?? ""}
+        unresolvedTalks.forEach { talk in
+            var talk = talk
+            talk.fields.speakers = talk.fields.speakers?.map{speakerIdToSpeakerNameMap[$0] ?? ""}
+            listTalks.append(talk)
         }
-        
-        // When all the data is loaded, paste the talk speakers in the right place
-        loaded = true
     }
     
     /**
@@ -124,8 +122,8 @@ class TalksViewModel: ObservableObject {
      Sets all class fields to their default values
      */
     private func resetData(){
-        loaded = false // Mark a not loaded first to leave time for the UI to react before we remove the rest of the data
         speakerIdToSpeakerNameMap = [:]
+        unresolvedTalks = []
         listTalks = []
         errorMessage = nil
         httpError = nil
@@ -139,6 +137,5 @@ class TalksViewModel: ObservableObject {
     private func setErrorState(error: (errorType: HttpError?, errorMessage: String?)){
         errorMessage = error.errorMessage ?? "No error message"
         httpError = error.errorType ?? .generic
-        loaded = true
     }
 }
