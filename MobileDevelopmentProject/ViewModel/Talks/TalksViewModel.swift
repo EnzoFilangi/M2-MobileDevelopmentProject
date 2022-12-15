@@ -56,7 +56,7 @@ class TalksViewModel: ObservableObject {
     private func resolveSpeakerReferences(speakerIds: [String], talkRecord: APIRecord<Talk>){
         let speakerUrl = "https://api.airtable.com/v0/appLxCaCuYWnjaSKB/%F0%9F%8E%A4%20Speakers/"
         
-        for (index, speakerId) in speakerIds.enumerated() {
+        speakerIds.forEach {speakerId in
             DataSource.getOne(url: speakerUrl + speakerId){ (error: (errorType: HttpError?, errorMessage: String?), record: APIRecord<Speaker>?) in
                 DispatchQueue.main.async {
                     if error.errorType == nil, error.errorMessage == nil, let speaker = record {

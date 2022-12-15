@@ -17,9 +17,8 @@ struct TopTabBarView: View {
             TopTabBarButtonsContainerView(tabIndex: $tabIndex, titles: self.titles)
             ScrollView {
                 if (talkViewModel.loaded) {
-                    if((talkViewModel.errorMessage) != nil){
-//                        Text("An error occured. Please check your internet connection.")
-                        Text(talkViewModel.errorMessage!)
+                    if(talkViewModel.errorMessage != nil || talkViewModel.httpError != nil){
+                        Text("An error occured. Please check your internet connection.").padding()
                     } else {
                         if(tabIndex == 0){
                             TalksListView(talks: talkViewModel.listTalks) { record in
