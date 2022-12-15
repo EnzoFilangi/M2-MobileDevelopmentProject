@@ -9,8 +9,7 @@ import Foundation
 
 class TalksViewModel: ObservableObject {
     
-    /// Used to temporarily store the resolved speakers to then be able to map them to the right talk
-    private var talkSpeakersMap: [String: [String]] = [:]
+    private var speakerIdToSpeakerNameMap: [String: String] = [:]
     
     @Published var loaded = false
     @Published var httpError: HttpError? = nil
@@ -18,9 +17,9 @@ class TalksViewModel: ObservableObject {
     @Published var listTalks: [APIRecord<Talk>] = []
     
     /**
-     Triggers the process of fetching the list of talks and resolving the references it contains
+     Triggers the process of fetching the list of talks
      */
-    func fetchTalks() -> Void {
+    func fetchTalks() {
         resetData()
         
         // Get all talks, sorted ascending on the "Start" column
@@ -30,7 +29,7 @@ class TalksViewModel: ObservableObject {
     }
     
     /**
-     Saves the returned Talks in the class variables and, for each of them, triggers the process of resolving its speaker references
+     Saves the list of Talk returned from the API and triggers the process of resolving their speaker references
      */
     private func handleTalksResponse(error: (errorType: HttpError?, errorMessage: String?), records: [APIRecord<Talk>]?) {
         DispatchQueue.main.async {
@@ -39,30 +38,21 @@ class TalksViewModel: ObservableObject {
                 return
             }
             
-            self.listTalks = records;
-            
-            self.listTalks.indices.forEach{ index in
-                // Get the list of speaker ids
-                let speakerIds = self.listTalks[index].fields.speakers;
-                
-                // Ensure there are speakers
-                guard let speakerIds = speakerIds else {
-                    return
-                }
-        
-                // If there are speakers, resolve their references
-                self.talkSpeakersMap[self.listTalks[index].id] = [] // Prepare the speakerId -> speakerName map
-                self.resolveSpeakerReferences(speakerIds: speakerIds, talkRecord: self.listTalks[index])
-            }
-            
-            self.verifyIfLoaded();
+            self.listTalks = records
+            self.resolveSpeakerNames()
         }
     }
     
-    private func resolveSpeakerReferences(speakerIds: [String], talkRecord: APIRecord<Talk>){
-        let speakerUrl = "https://api.airtable.com/v0/appLxCaCuYWnjaSKB/%F0%9F%8E%A4%20Speakers/"
+    /**
+     Fetches the speaker names from the API using their ids. Whenever a new name is fetched, saves it and tries to apply the map
+     */
+    private func resolveSpeakerNames(){
+        // Get a list of every unique speaker id
+        speakerIdToSpeakerNameMap = buildEmptySpeakerMap(records: listTalks)
         
-        speakerIds.forEach {speakerId in
+        // Fetch each unique speaker and save their name
+        let speakerUrl = "https://api.airtable.com/v0/appLxCaCuYWnjaSKB/%F0%9F%8E%A4%20Speakers/"
+        speakerIdToSpeakerNameMap.keys.forEach { speakerId in
             DataSource.getOne(url: speakerUrl + speakerId){ (error: (errorType: HttpError?, errorMessage: String?), record: APIRecord<Speaker>?) in
                 DispatchQueue.main.async {
                     guard error.errorType == nil, error.errorMessage == nil, let speaker = record else {
@@ -71,27 +61,32 @@ class TalksViewModel: ObservableObject {
                     }
                     
                     // Save the speaker name associated with the talk id
-                    self.talkSpeakersMap[talkRecord.id]?.append(speaker.fields.name)
-                    self.verifyIfLoaded();
+                    self.speakerIdToSpeakerNameMap[speakerId] = speaker.fields.name
+                    self.tryApplySpeakerMap() // Since we don't know which callback will happen last, always check if we can apply the map
                 }
             }
         }
     }
     
-    private func resetData(){
-        loaded = false
-        talkSpeakersMap = [:]
-        errorMessage = nil
-        httpError = nil
+    /**
+     Builds the foundation of the speaker id to speaker name translation map
+     
+     Returns a [String:String] map where the keys are all the existing speaker ids, and the values are all empty strings that should be filled later on
+     */
+    private func buildEmptySpeakerMap(records: [APIRecord<Talk>]) -> [String: String] {
+        var map : [String: String] = [:]
+        records.forEach{record in
+            record.fields.speakers?.forEach{speaker in
+                map[speaker] = "" // Can't use nil otherwise the key is not added to the map
+            }
+        }
+        return map
     }
     
-    private func setErrorState(error: (errorType: HttpError?, errorMessage: String?)){
-        errorMessage = error.errorMessage ?? "No error message"
-        httpError = error.errorType ?? .generic
-        loaded = true;
-    }
-    
-    private func verifyIfLoaded(){
+    /**
+     If the speaker list is full, converts each talk's list of speaker ids to a list of speaker names
+     */
+    private func tryApplySpeakerMap(){
         // If we are in an error state, don't even verify that some things have loaded
         guard errorMessage == nil, httpError == nil else {
             return
@@ -102,28 +97,48 @@ class TalksViewModel: ObservableObject {
             return
         }
         
-        // Once all references have been resolved, copy them into the talks instead of the references
-        applySpeakerMap()
+        // Once all references have been resolved, copy them into the talks in lieu of the references
+        // For each talk, translate each list of speaker ids into a list of speaker names and asign it to the talk's speakers
+        for (index, value) in listTalks.enumerated() {
+            listTalks[index].fields.speakers = value.fields.speakers?.map{speakerIdToSpeakerNameMap[$0] ?? ""}
+        }
         
         // When all the data is loaded, paste the talk speakers in the right place
         loaded = true
     }
     
-    private func isSpeakerMapFull() -> Bool{
-        // Check if, for each talk, there are as many speaker name as there are speaker refences
-        // If the numbers don't match, then we haven't resolved all names yet
-        var complete = true // Use this to return a value from the forEach
-        listTalks.forEach{ record in
-            if (record.fields.speakers != nil && record.fields.speakers?.count != talkSpeakersMap[record.id]?.count) {
-                complete = false
+    /**
+     Returns false if {speakerIdToSpeakerNameMap} still contains empty values, true otherwise
+     */
+    private func isSpeakerMapFull() -> Bool {
+        // Check if all the speaker ids are associated with a speaker name
+        for (_,value) in speakerIdToSpeakerNameMap {
+            if (value == ""){
+                return false
             }
         }
-        return complete
+        return true
     }
     
-    private func applySpeakerMap(){
-        for (index, record) in listTalks.enumerated() {
-            listTalks[index].fields.speakers = talkSpeakersMap[record.id]?.sorted() // Sort the names so the order doesn't depend on the response order
-        }
+    /**
+     Sets all class fields to their default values
+     */
+    private func resetData(){
+        loaded = false // Mark a not loaded first to leave time for the UI to react before we remove the rest of the data
+        speakerIdToSpeakerNameMap = [:]
+        listTalks = []
+        errorMessage = nil
+        httpError = nil
+    }
+    
+    /**
+     Decomposes the tuple given as parameters into class fields and marks the data as loaded.
+     
+     Indeed, if any error occurs, we can discard further results as we should display an error message to the user.
+     */
+    private func setErrorState(error: (errorType: HttpError?, errorMessage: String?)){
+        errorMessage = error.errorMessage ?? "No error message"
+        httpError = error.errorType ?? .generic
+        loaded = true
     }
 }
