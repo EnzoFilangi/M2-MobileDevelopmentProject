@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A9225F9E294B50C4000BEAD8 /* ApiResponseGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */; };
 		A9225FA0294B5380000BEAD8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225F9F294B5380000BEAD8 /* DataSource.swift */; };
+		A9225FA3294B5A6A000BEAD8 /* SpeakerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225FA2294B5A6A000BEAD8 /* SpeakerModel.swift */; };
 		A9BE0956294B202A003180FB /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0955294B202A003180FB /* HttpError.swift */; };
 		A9BE0958294B2CDA003180FB /* TalksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0957294B2CDA003180FB /* TalksListView.swift */; };
 		A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556142949C26B008B465E /* MobileDevelopmentProjectApp.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseGeneric.swift; sourceTree = "<group>"; };
 		A9225F9F294B5380000BEAD8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		A9225FA2294B5A6A000BEAD8 /* SpeakerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerModel.swift; sourceTree = "<group>"; };
 		A9BE0955294B202A003180FB /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		A9BE0957294B2CDA003180FB /* TalksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalksListView.swift; sourceTree = "<group>"; };
 		A9C556112949C26B008B465E /* MobileDevelopmentProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDevelopmentProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9225FA1294B5A5F000BEAD8 /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				A9225FA2294B5A6A000BEAD8 /* SpeakerModel.swift */,
+			);
+			path = Speakers;
+			sourceTree = "<group>";
+		};
 		A9C556082949C26B008B465E = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 		A9C5563E2949CA9E008B465E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9225FA1294B5A5F000BEAD8 /* Speakers */,
 				A9C55656294A13C4008B465E /* Talks */,
 				A9BE0955294B202A003180FB /* HttpError.swift */,
 				A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */,
@@ -381,6 +392,7 @@
 			files = (
 				A9C556462949CBBE008B465E /* SearchView.swift in Sources */,
 				A9C55659294A13D4008B465E /* TalkModel.swift in Sources */,
+				A9225FA3294B5A6A000BEAD8 /* SpeakerModel.swift in Sources */,
 				A9C55664294A2169008B465E /* TalksViewModel.swift in Sources */,
 				A9BE0956294B202A003180FB /* HttpError.swift in Sources */,
 				A9C556422949CBA5008B465E /* TalksTabView.swift in Sources */,

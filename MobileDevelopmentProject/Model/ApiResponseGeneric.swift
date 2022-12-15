@@ -11,7 +11,7 @@ import Foundation
  Top-level object definition for AirTable API responses
  */
 struct APIResponse<T : Codable>: Codable {
-    let records: [APIRecord<T>]
+    var records: [APIRecord<T>]
 }
 
 /**
@@ -19,6 +19,7 @@ struct APIResponse<T : Codable>: Codable {
  This is a container for T
  */
 struct APIRecord<T : Codable>: Codable {
-    let id, createdTime: String
-    let fields: T
+    let id: String
+    let createdTime: Date
+    var fields: T
 }

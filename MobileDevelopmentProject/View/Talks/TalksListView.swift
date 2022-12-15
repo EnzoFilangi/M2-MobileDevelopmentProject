@@ -33,9 +33,9 @@ struct TalksListView_Previews: PreviewProvider {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd HH:mm"
             let listTalks = [
-                APIRecord<Talk>(id: "1", createdTime: "", fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
-                APIRecord<Talk>(id: "2", createdTime: "", fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
-                APIRecord<Talk>(id: "3", createdTime: "", fields: Talk(location: "Bar", activity: "Event 3", type: "Panel", start: formatter.date(from: "2023-02-08 11:00")!, end: formatter.date(from: "2023-02-08 12:00")!, speakers: ["Mattheus Anderson"]))
+                APIRecord<Talk>(id: "1", createdTime: Date.now, fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
+                APIRecord<Talk>(id: "2", createdTime: Date.now, fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
+                APIRecord<Talk>(id: "3", createdTime: Date.now, fields: Talk(location: "Bar", activity: "Event 3", type: "Panel", start: formatter.date(from: "2023-02-08 11:00")!, end: formatter.date(from: "2023-02-08 12:00")!, speakers: ["Mattheus Anderson"]))
             ]
             return VStack {
                 TalksListView(talks: listTalks) { record in

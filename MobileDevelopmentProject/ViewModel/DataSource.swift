@@ -52,4 +52,34 @@ class DataSource {
             callback((nil, nil), response.records)
         }.resume()
     }
+    
+    static func getOne<EntityType: Codable>(url: String, callback: @escaping ((errorType: HttpError?, errorMessage: String?), APIRecord<EntityType>?) -> Void) -> Void {
+        URLSession(configuration: .default).dataTask(with: createRequest(urlStr: url)) { (data, response, error) in
+            guard let data = data, error == nil else {
+                callback((.generic, error?.localizedDescription ?? "An error occured"), nil)
+                return
+            }
+            
+            guard let responseHttp = response as? HTTPURLResponse else {
+                callback((.http, "Not an HTTP response"), nil)
+                return
+            }
+            
+            guard  responseHttp.statusCode == 200 else {
+                callback((.statusCode, String(responseHttp.statusCode)), nil)
+                return
+            }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            guard let response = try? decoder.decode(APIRecord<EntityType>.self, from: data) else {
+                callback((.parsing, "Response was not a valid JSON"), nil)
+                return
+            }
+            
+            callback((nil, nil), response)
+        }.resume()
+    }
 }

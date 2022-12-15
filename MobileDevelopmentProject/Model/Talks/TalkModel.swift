@@ -11,7 +11,7 @@ import SwiftUI
 struct Talk: Codable {
     let location, activity, type: String
     let start, end: Date
-    let speakers: [String]?
+    var speakers: [String]?
 
     enum CodingKeys: String, CodingKey {
         case end = "End"
