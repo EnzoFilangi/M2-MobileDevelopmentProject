@@ -72,6 +72,5 @@ class DataSource {
             
             callback((nil, nil), response)
         }.resume()
-        
     }
 }
