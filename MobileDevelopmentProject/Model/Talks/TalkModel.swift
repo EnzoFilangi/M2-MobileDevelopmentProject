@@ -11,17 +11,16 @@ import SwiftUI
 // MARK: - TalkAPIResponse
 struct TalkAPIResponse: Codable {
     let records: [TalkRecord]
-    let offset: String
 }
 
 // MARK: - Record
 struct TalkRecord: Codable {
     let id, createdTime: String
-    let fields: TalkFields
+    let fields: Talk
 }
 
 // MARK: - Fields
-struct TalkFields: Codable {
+struct Talk: Codable {
     let location, activity, type: String
     let start, end: Date
     let speakers: [String]?

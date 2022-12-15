@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TalkCardView: View {
-    let talk: TalkFields
+    let talk: Talk
     
-    init(talk: TalkFields) {
+    init(talk: Talk) {
         self.talk = talk
     }
     
@@ -72,11 +72,11 @@ struct TalkCardView: View {
 struct TalkCardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            TalkCardView(talk: TalkFields(location: "Foo", activity: "Building an alert system that works for everyone", type: "Panel", start: Date.now, end: Date.now, speakers: ["Mattheus Anderson"]))
+            TalkCardView(talk: Talk(location: "Foo", activity: "Building an alert system that works for everyone", type: "Panel", start: Date.now, end: Date.now, speakers: ["Mattheus Anderson"]))
             .padding()
-            TalkCardView(talk: TalkFields(location: "Foo", activity: "Opening remarks", type: "Keynote", start: Date.now, end: Date.now, speakers: ["John Smith", "Jane Doe"]))
+            TalkCardView(talk: Talk(location: "Foo", activity: "Opening remarks", type: "Keynote", start: Date.now, end: Date.now, speakers: ["John Smith", "Jane Doe"]))
             .padding()
-            TalkCardView(talk: TalkFields(location: "Foo", activity: "Lorem ipsum dolor sit amet", type: "Bar", start: Date.now, end: Date.now, speakers: nil))
+            TalkCardView(talk: Talk(location: "Foo", activity: "Lorem ipsum dolor sit amet", type: "Bar", start: Date.now, end: Date.now, speakers: nil))
             .padding()
         }
     }
