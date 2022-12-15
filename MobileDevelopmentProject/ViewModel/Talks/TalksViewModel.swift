@@ -34,7 +34,7 @@ class TalksViewModel: ObservableObject {
     private func handleTalksResponse(error: (errorType: HttpError?, errorMessage: String?), records: [APIRecord<Talk>]?) {
         DispatchQueue.main.async {
             guard error.errorType == nil, error.errorMessage == nil, let records = records else {
-                self.setErrorState(error: error)
+                self.handleError(error: error)
                 return
             }
             
@@ -56,7 +56,7 @@ class TalksViewModel: ObservableObject {
             DataSource.getOne(url: speakerUrl + speakerId){ (error: (errorType: HttpError?, errorMessage: String?), record: APIRecord<Speaker>?) in
                 DispatchQueue.main.async {
                     guard error.errorType == nil, error.errorMessage == nil, let speaker = record else {
-                        self.setErrorState(error: error)
+                        self.handleError(error: error)
                         return
                     }
                     
@@ -130,11 +130,11 @@ class TalksViewModel: ObservableObject {
     }
     
     /**
-     Decomposes the tuple given as parameters into class fields and marks the data as loaded.
+     Decomposes the tuple given as parameters into class fields
      
      Indeed, if any error occurs, we can discard further results as we should display an error message to the user.
      */
-    private func setErrorState(error: (errorType: HttpError?, errorMessage: String?)){
+    private func handleError(error: (errorType: HttpError?, errorMessage: String?)){
         errorMessage = error.errorMessage ?? "No error message"
         httpError = error.errorType ?? .generic
     }
