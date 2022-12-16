@@ -55,12 +55,7 @@ struct TalkCardView: View {
             }
             HStack {
                 Spacer()
-                Text(talk.type)
-                    .font(.caption)
-                    .foregroundColor(Color.black)
-                    .padding(10)
-                    .background(TalkTypeColor.get(talk.type))
-                    .clipShape(Capsule())
+                ColoredTextPill(text: talk.type)
             }
         }
         .padding()

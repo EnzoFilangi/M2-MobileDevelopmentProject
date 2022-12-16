@@ -10,6 +10,8 @@
 		A9225F9E294B50C4000BEAD8 /* ApiResponseGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */; };
 		A9225FA0294B5380000BEAD8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225F9F294B5380000BEAD8 /* DataSource.swift */; };
 		A9225FA3294B5A6A000BEAD8 /* Speaker.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */; };
+		A925C418294D0875002747F1 /* TalkDetails.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925C417294D0875002747F1 /* TalkDetails.View.swift */; };
+		A925C41B294D0C15002747F1 /* TalkTypePill.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */; };
 		A9BE0956294B202A003180FB /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0955294B202A003180FB /* HttpError.swift */; };
 		A9BE0958294B2CDA003180FB /* TalksList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0957294B2CDA003180FB /* TalksList.View.swift */; };
 		A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556142949C26B008B465E /* MobileDevelopmentProjectApp.swift */; };
@@ -52,6 +54,8 @@
 		A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseGeneric.swift; sourceTree = "<group>"; };
 		A9225F9F294B5380000BEAD8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.Model.swift; sourceTree = "<group>"; };
+		A925C417294D0875002747F1 /* TalkDetails.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetails.View.swift; sourceTree = "<group>"; };
+		A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTypePill.View.swift; sourceTree = "<group>"; };
 		A9BE0955294B202A003180FB /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		A9BE0957294B2CDA003180FB /* TalksList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalksList.View.swift; sourceTree = "<group>"; };
 		A9C556112949C26B008B465E /* MobileDevelopmentProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDevelopmentProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,14 @@
 				A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */,
 			);
 			path = Speakers;
+			sourceTree = "<group>";
+		};
+		A925C419294D0BFD002747F1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		A9C556082949C26B008B465E = {
@@ -183,6 +195,7 @@
 		A9C5563F2949CAA3008B465E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A925C419294D0BFD002747F1 /* Common */,
 				A9C55653294A10FD008B465E /* Talks */,
 				A9C55654294A1107008B465E /* Speakers */,
 				A9C55655294A1115008B465E /* Search */,
@@ -224,6 +237,7 @@
 				A9C5564A2949E3A8008B465E /* TopTabBar */,
 				A9C5565D294A15A2008B465E /* TalkCard.View.swift */,
 				A9BE0957294B2CDA003180FB /* TalksList.View.swift */,
+				A925C417294D0875002747F1 /* TalkDetails.View.swift */,
 			);
 			path = Talks;
 			sourceTree = "<group>";
@@ -392,6 +406,7 @@
 			files = (
 				A9C556462949CBBE008B465E /* Search.View.swift in Sources */,
 				A9C55659294A13D4008B465E /* TalkModel.swift in Sources */,
+				A925C418294D0875002747F1 /* TalkDetails.View.swift in Sources */,
 				A9225FA3294B5A6A000BEAD8 /* Speaker.Model.swift in Sources */,
 				A9C55664294A2169008B465E /* Talks.ViewModel.swift in Sources */,
 				A9BE0956294B202A003180FB /* HttpError.swift in Sources */,
@@ -403,6 +418,7 @@
 				A9C5565E294A15A2008B465E /* TalkCard.View.swift in Sources */,
 				A9C5564E2949E770008B465E /* TopTabBarTabSelector.View.swift in Sources */,
 				A9C556492949DF85008B465E /* CustomColors.swift in Sources */,
+				A925C41B294D0C15002747F1 /* TalkTypePill.View.swift in Sources */,
 				A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */,
 				A9225F9E294B50C4000BEAD8 /* ApiResponseGeneric.swift in Sources */,
 				A9BE0958294B2CDA003180FB /* TalksList.View.swift in Sources */,
