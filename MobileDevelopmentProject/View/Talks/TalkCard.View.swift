@@ -57,13 +57,14 @@ struct TalkCardView: View {
                 Spacer()
                 Text(talk.type)
                     .font(.caption)
+                    .foregroundColor(Color.black)
                     .padding(10)
                     .background(TalkTypeColor.get(talk.type))
                     .clipShape(Capsule())
             }
         }
         .padding()
-        .background()
+        .background(Color.foreground)
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 5)
     }

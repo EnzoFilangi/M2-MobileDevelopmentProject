@@ -14,4 +14,6 @@ extension Color {
     static let main = Color(uiColor: UIColor(named: "Primary")!)
     
     static let background = Color(uiColor: UIColor(named: "Background")!)
+    
+    static let foreground = Color(uiColor: UIColor(named: "Foreground")!)
 }
