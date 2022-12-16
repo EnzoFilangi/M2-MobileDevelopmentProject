@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TopTabBarButtonView: View {
+struct TopTabBarButton: View {
     let text: String
     @Binding var isSelected: Bool
     var body: some View {
@@ -28,15 +28,15 @@ struct TopTabBarButtonView: View {
 struct TopTabBarButtonView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            TopTabBarButtonView(text: "Lorem ipsum", isSelected: .constant(false))
+            TopTabBarButton(text: "Lorem ipsum", isSelected: .constant(false))
             Spacer()
                 .frame(height: 100)
-            TopTabBarButtonView(text: "Lorem ipsum", isSelected: .constant(true))
+            TopTabBarButton(text: "Lorem ipsum", isSelected: .constant(true))
             Spacer()
                 .frame(height: 100)
             HStack {
-                TopTabBarButtonView(text: "Lorem ipsum", isSelected: .constant(true))
-                TopTabBarButtonView(text: "Button", isSelected: .constant(false))
+                TopTabBarButton(text: "Lorem ipsum", isSelected: .constant(true))
+                TopTabBarButton(text: "Button", isSelected: .constant(false))
             }
         }
     }

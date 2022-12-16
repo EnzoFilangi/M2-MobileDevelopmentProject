@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TopTabBarButtonsContainerView: View {
+struct TopTabBarButtonsContainer: View {
     @Binding var tabIndex: Int
     let titles : [String]
     
@@ -19,7 +19,7 @@ struct TopTabBarButtonsContainerView: View {
     var body: some View {
         HStack(spacing: 20) {
             ForEach (Array(titles.enumerated()), id: \.element) {index, element in
-                TopTabBarButtonView(text: element, isSelected: .constant(tabIndex == index))
+                TopTabBarButton(text: element, isSelected: .constant(tabIndex == index))
                     .onTapGesture { onButtonTapped(index: index) }
             }
         }
@@ -32,6 +32,6 @@ struct TopTabBarButtonsContainerView: View {
 
 struct TopTabBarButtonsContainerView_Previews: PreviewProvider {
     static var previews: some View {
-        TopTabBarButtonsContainerView(tabIndex: .constant(0), titles: ["FirstView", "SecondView"])
+        TopTabBarButtonsContainer(tabIndex: .constant(0), titles: ["FirstView", "SecondView"])
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TalksView: View {
+    @StateObject var talkViewModel = TalksViewModel()
+    
     var body: some View {
         ZStack (alignment: .top) {
             Color.background
@@ -31,7 +33,24 @@ struct TalksView: View {
                   maxWidth: .infinity,
                   alignment: .topLeading
                 )
-                TopTabBarView()
+                if(talkViewModel.errorMessage != nil || talkViewModel.httpError != nil){
+                    Text("An error occured while getting the data. Please check your internet connection.").padding()
+                } else if (talkViewModel.listTalks.count > 0) {
+                    TopTabBar(
+                        titles: ["Right now", "Up next"],
+                        TalksListView(talks: talkViewModel.listTalks) { record in
+                            return record.fields.start < Date.now && record.fields.end > Date.now
+                        },
+                        TalksListView(talks: talkViewModel.listTalks) { record in
+                            return record.fields.start > Date.now
+                        }
+                    )
+                } else {
+                    ProgressView()
+                }
+            }.refreshable {
+                talkViewModel.fetchTalks()
+                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
             }
         }
     }

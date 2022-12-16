@@ -27,7 +27,7 @@
 		A9C556492949DF85008B465E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556482949DF85008B465E /* CustomColors.swift */; };
 		A9C5564C2949E3C2008B465E /* TopTabBarButton.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564B2949E3C2008B465E /* TopTabBarButton.View.swift */; };
 		A9C5564E2949E770008B465E /* TopTabBarTabSelector.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564D2949E770008B465E /* TopTabBarTabSelector.View.swift */; };
-		A9C556502949EB4C008B465E /* TalksTopTabBar.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564F2949EB4C008B465E /* TalksTopTabBar.View.swift */; };
+		A9C556502949EB4C008B465E /* TopTabBar.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564F2949EB4C008B465E /* TopTabBar.View.swift */; };
 		A9C55659294A13D4008B465E /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C55658294A13D4008B465E /* TalkModel.swift */; };
 		A9C5565E294A15A2008B465E /* TalkCard.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5565D294A15A2008B465E /* TalkCard.View.swift */; };
 		A9C55664294A2169008B465E /* Talks.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C55663294A2169008B465E /* Talks.ViewModel.swift */; };
@@ -74,7 +74,7 @@
 		A9C556482949DF85008B465E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		A9C5564B2949E3C2008B465E /* TopTabBarButton.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarButton.View.swift; sourceTree = "<group>"; };
 		A9C5564D2949E770008B465E /* TopTabBarTabSelector.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarTabSelector.View.swift; sourceTree = "<group>"; };
-		A9C5564F2949EB4C008B465E /* TalksTopTabBar.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalksTopTabBar.View.swift; sourceTree = "<group>"; };
+		A9C5564F2949EB4C008B465E /* TopTabBar.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.View.swift; sourceTree = "<group>"; };
 		A9C55658294A13D4008B465E /* TalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
 		A9C5565D294A15A2008B465E /* TalkCard.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCard.View.swift; sourceTree = "<group>"; };
 		A9C55663294A2169008B465E /* Talks.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talks.ViewModel.swift; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		A9C5564A2949E3A8008B465E /* TopTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				A9C5564F2949EB4C008B465E /* TalksTopTabBar.View.swift */,
+				A9C5564F2949EB4C008B465E /* TopTabBar.View.swift */,
 				A9C5564D2949E770008B465E /* TopTabBarTabSelector.View.swift */,
 				A9C5564B2949E3C2008B465E /* TopTabBarButton.View.swift */,
 			);
@@ -413,7 +413,7 @@
 				A9C556422949CBA5008B465E /* Talks.View.swift in Sources */,
 				A9C556172949C26B008B465E /* Main.View.swift in Sources */,
 				A9225FA0294B5380000BEAD8 /* DataSource.swift in Sources */,
-				A9C556502949EB4C008B465E /* TalksTopTabBar.View.swift in Sources */,
+				A9C556502949EB4C008B465E /* TopTabBar.View.swift in Sources */,
 				A9C556442949CBAF008B465E /* Speakers.View.swift in Sources */,
 				A9C5565E294A15A2008B465E /* TalkCard.View.swift in Sources */,
 				A9C5564E2949E770008B465E /* TopTabBarTabSelector.View.swift in Sources */,
