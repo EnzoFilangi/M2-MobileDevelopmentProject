@@ -39,6 +39,8 @@ struct TalksView: View {
 
 struct TalksView_Previews: PreviewProvider {
     static var previews: some View {
-        TalksView()
+        NavigationStack {
+            TalksView()
+        }
     }
 }

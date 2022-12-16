@@ -17,13 +17,17 @@ struct TalksListView: View {
     }
     
     var body: some View {
-        VStack {
-            ForEach(talks.filter(filter), id: \.id){ record in
-                TalkCardView(talk: record.fields)
-                    .padding([.top, .bottom], 10)
+        ScrollView {
+            ForEach(talks.filter(filter), id: \.id) { record in
+                NavigationLink(destination: TalkDetails(talk: record.fields)){
+                    TalkCardView(talk: record.fields)
+                        .padding([.top, .bottom], 10)
+                }
+                .buttonStyle(.plain)
             }
+            .padding([.leading, .trailing])
         }
-        .padding([.leading, .trailing])
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
@@ -37,14 +41,11 @@ struct TalksListView_Previews: PreviewProvider {
                 APIRecord<Talk>(id: "2", createdTime: Date.now, fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
                 APIRecord<Talk>(id: "3", createdTime: Date.now, fields: Talk(location: "Bar", activity: "Event 3", type: "Panel", start: formatter.date(from: "2023-02-08 11:00")!, end: formatter.date(from: "2023-02-08 12:00")!, speakers: ["Mattheus Anderson"]))
             ]
-            return VStack {
+            return Group {
                 TalksListView(talks: listTalks) { record in
                     let date = formatter.date(from: "2023-02-08 09:15")!
                     return record.fields.start < date && record.fields.end > date
                 }
-                
-                Divider()
-                
                 TalksListView(talks: listTalks) { record in
                     let date = formatter.date(from: "2023-02-08 11:15")!
                     return record.fields.start < date && record.fields.end > date
@@ -54,6 +55,8 @@ struct TalksListView_Previews: PreviewProvider {
     }
     
     static var previews: some View {
-        return ViewWrapper()
+        return NavigationStack{
+            ViewWrapper()
+        }
     }
 }
