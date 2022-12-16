@@ -14,23 +14,24 @@ struct MainView: View {
                 .tabItem {
                     Label("Talks", systemImage: "calendar")
                 }
-                .toolbarBackground(Color.background, for: .tabBar)
             SpeakersView()
                 .tabItem {
                     Label("Speakers", systemImage: "person")
                 }
-                .toolbarBackground(Color.background, for: .tabBar)
             SearchView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-                .toolbarBackground(Color.background, for: .tabBar)
         }.onAppear{
             let tabBarAppearance = UITabBarAppearance()
+            // Force opaque background
             tabBarAppearance.configureWithOpaqueBackground()
-            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             
-            UITabBar.appearance().unselectedItemTintColor = UIColor(named: "Primary")
+            // Set the background color of the tab bar so it matches with the rest
+            tabBarAppearance.backgroundColor = UIColor(Color.background)
+            
+            // Apply the new appearance
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         }
     }
 }
