@@ -34,7 +34,19 @@ struct TalksView: View {
                   alignment: .topLeading
                 )
                 if(talkViewModel.errorMessage != nil || talkViewModel.httpError != nil){
-                    Text("An error occured while getting the data. Please check your internet connection.").padding()
+                    VStack {
+                        Text("😰")
+                            .font(.system(size: 100))
+                        Text("The list of talks couldn't be fetched, please check your internet connection.")
+                            .font(.title3)
+                            .foregroundColor(.main)
+                            .multilineTextAlignment(.center)
+                    }
+                    .frame(
+                        minWidth: 0,
+                        maxWidth: .infinity
+                    )
+                    .padding()
                 } else if (talkViewModel.listTalks.count > 0) {
                     TopTabBar(
                         titles: ["Right now", "Up next"],
@@ -46,7 +58,11 @@ struct TalksView: View {
                         }
                     )
                 } else {
-                    ProgressView()
+                    HStack{
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
                 }
             }.refreshable {
                 talkViewModel.fetchTalks()
