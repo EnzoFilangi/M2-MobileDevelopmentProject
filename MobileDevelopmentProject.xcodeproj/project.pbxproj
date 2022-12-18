@@ -12,6 +12,8 @@
 		A9225FA3294B5A6A000BEAD8 /* Speaker.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */; };
 		A925C418294D0875002747F1 /* TalkDetails.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925C417294D0875002747F1 /* TalkDetails.View.swift */; };
 		A925C41B294D0C15002747F1 /* TalkTypePill.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */; };
+		A92EEC23294FC02F00677078 /* SpeakerDetail.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92EEC22294FC02F00677078 /* SpeakerDetail.View.swift */; };
+		A92EEC25294FC2AE00677078 /* TextIconButton.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */; };
 		A99CE783294F5E6400CD3180 /* SpeakersList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */; };
 		A99CE785294F608000CD3180 /* SpeakerCard.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE784294F608000CD3180 /* SpeakerCard.View.swift */; };
 		A99CE788294F687D00CD3180 /* Speakers.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */; };
@@ -59,6 +61,8 @@
 		A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.Model.swift; sourceTree = "<group>"; };
 		A925C417294D0875002747F1 /* TalkDetails.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetails.View.swift; sourceTree = "<group>"; };
 		A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTypePill.View.swift; sourceTree = "<group>"; };
+		A92EEC22294FC02F00677078 /* SpeakerDetail.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetail.View.swift; sourceTree = "<group>"; };
+		A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIconButton.View.swift; sourceTree = "<group>"; };
 		A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersList.View.swift; sourceTree = "<group>"; };
 		A99CE784294F608000CD3180 /* SpeakerCard.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCard.View.swift; sourceTree = "<group>"; };
 		A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speakers.ViewModel.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */,
+				A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				A9C556432949CBAF008B465E /* Speakers.View.swift */,
 				A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */,
 				A99CE784294F608000CD3180 /* SpeakerCard.View.swift */,
+				A92EEC22294FC02F00677078 /* SpeakerDetail.View.swift */,
 			);
 			path = Speakers;
 			sourceTree = "<group>";
@@ -428,6 +434,7 @@
 				A9C55664294A2169008B465E /* Talks.ViewModel.swift in Sources */,
 				A9BE0956294B202A003180FB /* HttpError.swift in Sources */,
 				A9C556422949CBA5008B465E /* Talks.View.swift in Sources */,
+				A92EEC25294FC2AE00677078 /* TextIconButton.View.swift in Sources */,
 				A99CE785294F608000CD3180 /* SpeakerCard.View.swift in Sources */,
 				A9C556172949C26B008B465E /* Main.View.swift in Sources */,
 				A9225FA0294B5380000BEAD8 /* DataSource.swift in Sources */,
@@ -443,6 +450,7 @@
 				A9225F9E294B50C4000BEAD8 /* ApiResponseGeneric.swift in Sources */,
 				A9BE0958294B2CDA003180FB /* TalksList.View.swift in Sources */,
 				A9C5564C2949E3C2008B465E /* TopTabBarButton.View.swift in Sources */,
+				A92EEC23294FC02F00677078 /* SpeakerDetail.View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
