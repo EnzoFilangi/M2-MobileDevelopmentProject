@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct SpeakersView: View {
+    let names = ["Holly", "Josh", "Rhonda", "Ted"]
+    @State private var searchText = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            ZStack (alignment: .top) {
+                Color.background
+                    .ignoresSafeArea()
+                VStack(alignment: .leading) {
+                    
+                }.navigationTitle("Speakers")
+                    .searchable(text: $searchText)
+            }
+        }
+    }
+    
+    var searchResults: [String] {
+        if searchText.isEmpty {
+            return names
+        } else {
+            return names.filter { $0.contains(searchText)
+            }
+        }
     }
 }
 

@@ -32,31 +32,27 @@ struct TalksListView: View {
 }
 
 struct TalksListView_Previews: PreviewProvider {
-    private struct ViewWrapper: View {
-        var body: some View {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm"
-            let listTalks = [
-                APIRecord<Talk>(id: "1", createdTime: Date.now, fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
-                APIRecord<Talk>(id: "2", createdTime: Date.now, fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
-                APIRecord<Talk>(id: "3", createdTime: Date.now, fields: Talk(location: "Bar", activity: "Event 3", type: "Panel", start: formatter.date(from: "2023-02-08 11:00")!, end: formatter.date(from: "2023-02-08 12:00")!, speakers: ["Mattheus Anderson"]))
-            ]
-            return Group {
+    static var previews: some View {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let listTalks = [
+            APIRecord<Talk>(id: "1", createdTime: Date.now, fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
+            APIRecord<Talk>(id: "2", createdTime: Date.now, fields: Talk(location: "Foo", activity: "Event 1", type: "Panel", start: formatter.date(from: "2023-02-08 09:00")!, end: formatter.date(from: "2023-02-08 10:00")!, speakers: ["Mattheus Anderson"])),
+            APIRecord<Talk>(id: "3", createdTime: Date.now, fields: Talk(location: "Bar", activity: "Event 3", type: "Panel", start: formatter.date(from: "2023-02-08 11:00")!, end: formatter.date(from: "2023-02-08 12:00")!, speakers: ["Mattheus Anderson"]))
+        ]
+        return Group {
+            NavigationStack{
                 TalksListView(talks: listTalks) { record in
                     let date = formatter.date(from: "2023-02-08 09:15")!
                     return record.fields.start < date && record.fields.end > date
                 }
+            }
+            NavigationStack{
                 TalksListView(talks: listTalks) { record in
                     let date = formatter.date(from: "2023-02-08 11:15")!
                     return record.fields.start < date && record.fields.end > date
                 }
             }
-        }
-    }
-    
-    static var previews: some View {
-        return NavigationStack{
-            ViewWrapper()
         }
     }
 }
