@@ -46,7 +46,6 @@ struct TalksView: View {
                         Spacer()
                     }
                 }
-                
             }
             .refreshable {
                 talkViewModel.fetchTalks()

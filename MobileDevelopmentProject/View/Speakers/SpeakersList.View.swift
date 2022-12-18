@@ -64,39 +64,41 @@ struct SpeakersList: View {
     var body: some View {
         let filteredRecords = filterFromSearch(speakerRecords)
         
-        VStack(alignment: .leading){
-            ForEach(
-                extractFirstLetters(filteredRecords),
-                id: \.self)
-            { letter in
-                VStack{
-                    HStack{
-                        Text(letter)
-                            .font(.headline)
-                            .foregroundColor(.main)
-                        Spacer()
+        ScrollView{
+            VStack(alignment: .leading){
+                ForEach(
+                    extractFirstLetters(filteredRecords),
+                    id: \.self)
+                { letter in
+                    VStack{
+                        HStack{
+                            Text(letter)
+                                .font(.headline)
+                                .foregroundColor(.main)
+                            Spacer()
+                        }
+                        Divider()
+                        ForEach(
+                            getRecordsWithNameWhere(
+                                firstLetter: letter,
+                                speakerRecords: filteredRecords
+                            ),
+                            id: \.id)
+                        { record in
+                            SpeakerCard(record.fields)
+                                .padding([.top, .bottom], 1)
+                        }
                     }
-                    Divider()
-                    ForEach(
-                        getRecordsWithNameWhere(
-                            firstLetter: letter,
-                            speakerRecords: filteredRecords
-                        ),
-                        id: \.id)
-                    { record in
-                        SpeakerCard(record.fields)
-                            .padding([.top, .bottom], 1)
-                    }
+                    .padding(.bottom, 30)
                 }
-                .padding(.bottom, 30)
             }
+            .padding()
+            .frame(
+                minWidth: 0,
+                maxWidth: .infinity
+            )
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         }
-        .padding()
-        .frame(
-            minWidth: 0,
-            maxWidth: .infinity
-        )
-        .searchable(text: $searchText)
     }
 }
 
@@ -106,7 +108,12 @@ struct SpeakersList_View_Previews: PreviewProvider {
             SpeakersList(speakerRecords: [
                 APIRecord<Speaker>(id: "1", createdTime: Date.now, fields: Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com")),
                 APIRecord<Speaker>(id: "2", createdTime: Date.now, fields: Speaker(name: "Deepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
-                APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Deepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com"))
+                APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Aeepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
+                APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Beepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
+                APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Deepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
+                APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Ceepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
+                APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Eepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
+                APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Feepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
             ])
         }
     }

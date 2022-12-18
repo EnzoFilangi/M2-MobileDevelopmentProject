@@ -14,6 +14,7 @@
 		A925C41B294D0C15002747F1 /* TalkTypePill.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */; };
 		A99CE783294F5E6400CD3180 /* SpeakersList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */; };
 		A99CE785294F608000CD3180 /* SpeakerCard.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE784294F608000CD3180 /* SpeakerCard.View.swift */; };
+		A99CE788294F687D00CD3180 /* Speakers.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */; };
 		A9BE0956294B202A003180FB /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0955294B202A003180FB /* HttpError.swift */; };
 		A9BE0958294B2CDA003180FB /* TalksList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0957294B2CDA003180FB /* TalksList.View.swift */; };
 		A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556142949C26B008B465E /* MobileDevelopmentProjectApp.swift */; };
@@ -60,6 +61,7 @@
 		A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTypePill.View.swift; sourceTree = "<group>"; };
 		A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersList.View.swift; sourceTree = "<group>"; };
 		A99CE784294F608000CD3180 /* SpeakerCard.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCard.View.swift; sourceTree = "<group>"; };
+		A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speakers.ViewModel.swift; sourceTree = "<group>"; };
 		A9BE0955294B202A003180FB /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		A9BE0957294B2CDA003180FB /* TalksList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalksList.View.swift; sourceTree = "<group>"; };
 		A9C556112949C26B008B465E /* MobileDevelopmentProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDevelopmentProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,14 @@
 				A925C41A294D0C15002747F1 /* TalkTypePill.View.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		A99CE786294F687000CD3180 /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */,
+			);
+			path = Speakers;
 			sourceTree = "<group>";
 		};
 		A9C556082949C26B008B465E = {
@@ -210,6 +220,7 @@
 		A9C556402949CAAD008B465E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A99CE786294F687000CD3180 /* Speakers */,
 				A9C55662294A2160008B465E /* Talks */,
 				A9225F9F294B5380000BEAD8 /* DataSource.swift */,
 			);
@@ -425,6 +436,7 @@
 				A9C5565E294A15A2008B465E /* TalkCard.View.swift in Sources */,
 				A9C5564E2949E770008B465E /* TopTabBarTabSelector.View.swift in Sources */,
 				A99CE783294F5E6400CD3180 /* SpeakersList.View.swift in Sources */,
+				A99CE788294F687D00CD3180 /* Speakers.ViewModel.swift in Sources */,
 				A9C556492949DF85008B465E /* CustomColors.swift in Sources */,
 				A925C41B294D0C15002747F1 /* TalkTypePill.View.swift in Sources */,
 				A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */,
