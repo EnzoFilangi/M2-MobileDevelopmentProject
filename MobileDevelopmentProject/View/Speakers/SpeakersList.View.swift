@@ -85,8 +85,10 @@ struct SpeakersList: View {
                             ),
                             id: \.id)
                         { record in
-                            SpeakerCard(record.fields)
-                                .padding([.top, .bottom], 1)
+                            NavigationLink(destination: SpeakerDetail(speaker: record.fields)){
+                                SpeakerCard(record.fields)
+                                    .padding([.top, .bottom], 1)
+                            }
                         }
                     }
                     .padding(.bottom, 30)

@@ -16,6 +16,11 @@ struct SpeakerCard: View {
     
     var body: some View {
         HStack{
+            Image(systemName: "person.crop.circle.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 25, height: 25)
+                .foregroundColor(.main)
             Text(speaker.name)
                 .foregroundColor(.main)
             Spacer()

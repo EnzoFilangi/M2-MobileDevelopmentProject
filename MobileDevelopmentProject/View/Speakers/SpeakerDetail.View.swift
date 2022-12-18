@@ -63,6 +63,7 @@ struct SpeakerDetail: View {
                     .fontWeight(.bold)
             }
         }
+        .toolbar(.hidden, for: .tabBar)
     }
 }
 
