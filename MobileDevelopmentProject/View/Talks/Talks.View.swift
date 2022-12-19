@@ -9,6 +9,15 @@ import SwiftUI
 
 struct TalksView: View {
     @StateObject var talkViewModel = TalksViewModel()
+    @StateObject private var currentDate = ObservableDate()
+    
+    private func filterCurrentTalks(record : APIRecord<Talk>) -> Bool {
+        return record.fields.start <= currentDate.date && record.fields.end > currentDate.date
+    }
+    
+    private func filterFutureTalks(record : APIRecord<Talk>) -> Bool {
+        return record.fields.start >= currentDate.date
+    }
     
     var body: some View {
         NavigationStack {
@@ -20,12 +29,8 @@ struct TalksView: View {
                 } else if (talkViewModel.listTalks.count > 0) {
                     TopTabBar(
                         titles: ["Right now", "Up next"],
-                        TalksListView(talks: talkViewModel.listTalks) { record in
-                            return record.fields.start < Date.now && record.fields.end > Date.now
-                        },
-                        TalksListView(talks: talkViewModel.listTalks) { record in
-                            return record.fields.start > Date.now
-                        }
+                        TalksListView(talks: talkViewModel.listTalks, filter: filterCurrentTalks),
+                        TalksListView(talks: talkViewModel.listTalks, filter: filterFutureTalks)
                     )
                 } else {
                     HStack{
@@ -40,6 +45,11 @@ struct TalksView: View {
                 UIImpactFeedbackGenerator(style: .soft).impactOccurred()
             }
             .navigationTitle("All talks")
+            .toolbar{
+                ToolbarItem(placement: .navigationBarTrailing){
+                    DateChooserView(actualDate: currentDate)
+                }
+            }
         }
     }
 }

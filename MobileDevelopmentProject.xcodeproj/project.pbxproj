@@ -40,6 +40,8 @@
 		A9D63B0B2950687A004287BC /* SearchableTalkList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0A2950687A004287BC /* SearchableTalkList.View.swift */; };
 		A9D63B0D2950736C004287BC /* TalkTypeSelector.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0C2950736C004287BC /* TalkTypeSelector.View.swift */; };
 		A9D63B102950742B004287BC /* SelectedTalkType.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */; };
+		A9D63B122950FFC7004287BC /* DateChooser.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B112950FFC7004287BC /* DateChooser.View.swift */; };
+		A9D63B142951020E004287BC /* ObservableDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B132951020E004287BC /* ObservableDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		A9D63B0A2950687A004287BC /* SearchableTalkList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTalkList.View.swift; sourceTree = "<group>"; };
 		A9D63B0C2950736C004287BC /* TalkTypeSelector.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTypeSelector.View.swift; sourceTree = "<group>"; };
 		A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTalkType.ViewModel.swift; sourceTree = "<group>"; };
+		A9D63B112950FFC7004287BC /* DateChooser.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateChooser.View.swift; sourceTree = "<group>"; };
+		A9D63B132951020E004287BC /* ObservableDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,7 @@
 				A99CE786294F687000CD3180 /* Speakers */,
 				A9C55662294A2160008B465E /* Talks */,
 				A9225F9F294B5380000BEAD8 /* DataSource.swift */,
+				A9D63B132951020E004287BC /* ObservableDate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				A9C5565D294A15A2008B465E /* TalkCard.View.swift */,
 				A9BE0957294B2CDA003180FB /* TalksList.View.swift */,
 				A925C417294D0875002747F1 /* TalkDetails.View.swift */,
+				A9D63B112950FFC7004287BC /* DateChooser.View.swift */,
 			);
 			path = Talks;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				A925C418294D0875002747F1 /* TalkDetails.View.swift in Sources */,
 				A9225FA3294B5A6A000BEAD8 /* Speaker.Model.swift in Sources */,
 				A9C55664294A2169008B465E /* Talks.ViewModel.swift in Sources */,
+				A9D63B142951020E004287BC /* ObservableDate.swift in Sources */,
 				A9BE0956294B202A003180FB /* HttpError.swift in Sources */,
 				A9C556422949CBA5008B465E /* Talks.View.swift in Sources */,
 				A92EEC25294FC2AE00677078 /* TextIconButton.View.swift in Sources */,
@@ -469,6 +476,7 @@
 				A99CE788294F687D00CD3180 /* Speakers.ViewModel.swift in Sources */,
 				A9C556492949DF85008B465E /* CustomColors.swift in Sources */,
 				A925C41B294D0C15002747F1 /* ColoredTextPill.View.swift in Sources */,
+				A9D63B122950FFC7004287BC /* DateChooser.View.swift in Sources */,
 				A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */,
 				A9D63B0B2950687A004287BC /* SearchableTalkList.View.swift in Sources */,
 				A9225F9E294B50C4000BEAD8 /* ApiResponseGeneric.swift in Sources */,
