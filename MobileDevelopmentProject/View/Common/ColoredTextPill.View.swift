@@ -43,7 +43,7 @@ struct ColoredTextPill: View {
     }
 }
 
-struct TalkTypePill_View_Previews: PreviewProvider {
+struct ColoredTextPill_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             VStack {
