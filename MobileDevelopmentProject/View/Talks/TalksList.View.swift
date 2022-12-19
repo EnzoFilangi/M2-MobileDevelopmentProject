@@ -17,15 +17,28 @@ struct TalksListView: View {
     }
     
     var body: some View {
-        ScrollView {
-            ForEach(talks.filter(filter), id: \.id) { record in
-                NavigationLink(destination: TalkDetails(talk: record.fields)){
-                    TalkCardView(talk: record.fields)
-                        .padding([.top, .bottom], 10)
+        let displayedTalks = talks.filter(filter)
+        
+        return ScrollView {
+            if (displayedTalks.count < 1) {
+                VStack{
+                    Text("Sorry, there isn't any talk matching this criteria!")
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+                    Text("🙁")
+                        .font(.largeTitle)
                 }
-                .buttonStyle(.plain)
+                .padding([.top, .bottom], 10)
+            } else {
+                ForEach(displayedTalks, id: \.id) { record in
+                    NavigationLink(destination: TalkDetails(talk: record.fields)){
+                        TalkCardView(talk: record.fields)
+                            .padding([.top, .bottom], 10)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding([.leading, .trailing])
             }
-            .padding([.leading, .trailing])
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
@@ -52,6 +65,9 @@ struct TalksListView_Previews: PreviewProvider {
                     let date = formatter.date(from: "2023-02-08 11:15")!
                     return record.fields.start < date && record.fields.end > date
                 }
+            }
+            NavigationStack{
+                TalksListView(talks: listTalks) {record in false}
             }
         }
     }
