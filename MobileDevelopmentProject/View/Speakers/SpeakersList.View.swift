@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpeakersList: View {
+struct SpeakersListView: View {
     @State private var searchText = ""
     
     let speakerRecords: [APIRecord<Speaker>]
@@ -85,8 +85,8 @@ struct SpeakersList: View {
                             ),
                             id: \.id)
                         { record in
-                            NavigationLink(destination: SpeakerDetail(speaker: record.fields)){
-                                SpeakerCard(record.fields)
+                            NavigationLink(destination: SpeakerDetailView(speaker: record.fields)){
+                                SpeakerCardView(record.fields)
                                     .padding([.top, .bottom], 1)
                             }
                         }
@@ -107,7 +107,7 @@ struct SpeakersList: View {
 struct SpeakersList_View_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            SpeakersList(speakerRecords: [
+            SpeakersListView(speakerRecords: [
                 APIRecord<Speaker>(id: "1", createdTime: Date.now, fields: Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com")),
                 APIRecord<Speaker>(id: "2", createdTime: Date.now, fields: Speaker(name: "Deepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),
                 APIRecord<Speaker>(id: "3", createdTime: Date.now, fields: Speaker(name: "Aeepa Vartak", role: "Head of product", company: "Playpen.io", phone: "(123) 456-7890", email: "deepa@email.com")),

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpeakerCard: View {
+struct SpeakerCardView: View {
     let speaker : Speaker
     
     init(_ speaker: Speaker) {
@@ -30,6 +30,6 @@ struct SpeakerCard: View {
 
 struct SpeakerCard_View_Previews: PreviewProvider {
     static var previews: some View {
-        SpeakerCard(Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com"))
+        SpeakerCardView(Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com"))
     }
 }

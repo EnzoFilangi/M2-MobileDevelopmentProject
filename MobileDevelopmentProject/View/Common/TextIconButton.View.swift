@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextIconButton_View: View {
+struct TextIconButton: View {
     
     let iconName : String
     let title : String
@@ -39,12 +39,12 @@ struct TextIconButton_View: View {
     }
 }
 
-struct TextIconButton_View_Previews: PreviewProvider {
+struct TextIconButton_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TextIconButton_View(iconName: "message.fill", title: "message"){}
-            TextIconButton_View(iconName: "phone.fill", title: "call"){}
-            TextIconButton_View(iconName: "envelope.fill", title: "e-mail"){}
+            TextIconButton(iconName: "message.fill", title: "message"){}
+            TextIconButton(iconName: "phone.fill", title: "call"){}
+            TextIconButton(iconName: "envelope.fill", title: "e-mail"){}
         }
         
     }

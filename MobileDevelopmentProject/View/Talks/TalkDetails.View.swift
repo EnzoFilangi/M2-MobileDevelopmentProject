@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TalkDetails: View {
+struct TalkDetailsView: View {
     let talk : Talk
     
     init(talk: Talk) {
@@ -103,10 +103,10 @@ struct TalkDetails_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationStack{
-                TalkDetails(talk: Talk(location: "Sapphire room", activity: "Building an alert system that works for everyone", type: "Panel", start: Date.now, end: Date.now, speakers: ["Mattheus Anderson", "Deepa Vartak"]))
+                TalkDetailsView(talk: Talk(location: "Sapphire room", activity: "Building an alert system that works for everyone", type: "Panel", start: Date.now, end: Date.now, speakers: ["Mattheus Anderson", "Deepa Vartak"]))
             }
             NavigationStack{
-                TalkDetails(talk: Talk(location: "Foo", activity: "Building an alert system that works for everyone", type: "Panel", start: Date.now, end: Date.now, speakers: nil))
+                TalkDetailsView(talk: Talk(location: "Foo", activity: "Building an alert system that works for everyone", type: "Panel", start: Date.now, end: Date.now, speakers: nil))
             }
         }
         

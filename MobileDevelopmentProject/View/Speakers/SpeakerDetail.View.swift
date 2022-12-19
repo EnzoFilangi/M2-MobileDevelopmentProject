@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpeakerDetail: View {
+struct SpeakerDetailView: View {
     let speaker : Speaker
     
     init(speaker: Speaker) {
@@ -29,11 +29,11 @@ struct SpeakerDetail: View {
             .frame(minWidth: 0, maxWidth: .infinity)
             HStack {
                 Spacer()
-                TextIconButton_View(iconName: "message.fill", title: "message"){}
+                TextIconButton(iconName: "message.fill", title: "message"){}
                 Spacer()
-                TextIconButton_View(iconName: "phone.fill", title: "call"){}
+                TextIconButton(iconName: "phone.fill", title: "call"){}
                 Spacer()
-                TextIconButton_View(iconName: "envelope.fill", title: "e-mail"){}
+                TextIconButton(iconName: "envelope.fill", title: "e-mail"){}
                 Spacer()
             }
             HStack {
@@ -73,7 +73,7 @@ struct SpeakerDetail: View {
 struct SpeakerDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            SpeakerDetail(speaker: Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com"))
+            SpeakerDetailView(speaker: Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com"))
         }
     }
 }
