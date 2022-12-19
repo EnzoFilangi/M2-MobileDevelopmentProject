@@ -16,6 +16,17 @@ struct SpeakerDetail: View {
     
     var body: some View {
         VStack (alignment: .leading) {
+            VStack (alignment: .center) {
+                Image(systemName: "person.crop.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 100)
+                Text(speaker.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+            }
+            .foregroundColor(.primary)
+            .frame(minWidth: 0, maxWidth: .infinity)
             HStack {
                 Spacer()
                 TextIconButton_View(iconName: "message.fill", title: "message"){}
@@ -54,15 +65,8 @@ struct SpeakerDetail: View {
         }
         .foregroundColor(.main)
         .frame(minWidth: 0, maxWidth: .infinity)
-        .padding()
+        .padding([.leading, .trailing])
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal){
-                Text(speaker.name)
-                    .font(.title)
-                    .fontWeight(.bold)
-            }
-        }
     }
 }
 
