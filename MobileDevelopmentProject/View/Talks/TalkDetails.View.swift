@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import EventKit
 
 struct TalkDetailsView: View {
     let talk : Talk
+    
+    let eventStore : EKEventStore = EKEventStore()
     
     init(talk: Talk) {
         self.talk = talk
@@ -37,7 +40,28 @@ struct TalkDetailsView: View {
         )
     }
     
+    /**
+     Creates a new event in the user's default calendar for this talk
+     */
     private func saveToCalendar(){
+        eventStore.requestAccess(to: .event) { (granted, error) in
+          if (granted) && (error == nil) {
+              
+              let event:EKEvent = EKEvent(eventStore: eventStore)
+              
+              event.title = talk.activity
+              event.startDate = talk.start
+              event.endDate = talk.end
+              event.notes = talk.speakers?.reduce("Speakers : \n", { partialResult, name in
+                  partialResult + "\n" + name
+              })
+              event.location = talk.location
+              event.calendar = eventStore.defaultCalendarForNewEvents
+              do {
+                  try eventStore.save(event, span: .thisEvent)
+              } catch _ {}
+          }
+        }
     }
     
     var body: some View {
