@@ -96,7 +96,6 @@ struct TalkDetails: View {
         .padding()
         .navigationTitle("Talk details")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar(.hidden, for: .tabBar)
     }
 }
 
