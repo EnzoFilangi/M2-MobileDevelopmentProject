@@ -17,3 +17,13 @@ extension Color {
     
     static let foreground = Color(uiColor: UIColor(named: "Foreground")!)
 }
+
+extension UIColor {
+    static let accent = UIColor(named: "AccentColor")!
+    
+    static let main = UIColor(named: "Primary")!
+    
+    static let background = UIColor(named: "Background")!
+    
+    static let foreground = UIColor(named: "Foreground")!
+}
