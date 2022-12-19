@@ -18,7 +18,7 @@ struct SpeakersView: View {
                 if(speakersViewModel.errorMessage != nil || speakersViewModel.httpError != nil){
                     ErrorMessage("The list of speakers couldn't be fetched, please check your internet connection.")
                 } else if (speakersViewModel.listSpeakers.count > 0) {
-                    SpeakersList(speakerRecords : speakersViewModel.listSpeakers)
+                    SpeakersListView(speakerRecords : speakersViewModel.listSpeakers)
                 } else {
                     HStack{
                         Spacer()

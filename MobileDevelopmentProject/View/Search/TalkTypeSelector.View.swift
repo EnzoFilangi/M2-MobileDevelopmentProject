@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TalkTypeSelector: View {
+struct TalkTypeSelectorView: View {
     
     @ObservedObject var data : SelectedTalkTypeViewModel
     
@@ -47,6 +47,6 @@ struct TalkTypeSelector: View {
 
 struct TalkTypeSelector_Previews: PreviewProvider {
     static var previews: some View {
-        return TalkTypeSelector(data: SelectedTalkTypeViewModel(possibleTypes: ["Panel", "Keynote", "Workshop", "Meal", "Breakout session", "Networking", "Other"]))
+        return TalkTypeSelectorView(data: SelectedTalkTypeViewModel(possibleTypes: ["Panel", "Keynote", "Workshop", "Meal", "Breakout session", "Networking", "Other"]))
     }
 }

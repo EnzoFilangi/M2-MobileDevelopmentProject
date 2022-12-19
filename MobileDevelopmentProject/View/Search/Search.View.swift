@@ -23,7 +23,7 @@ struct SearchView: View {
                 if(talkViewModel.errorMessage != nil || talkViewModel.httpError != nil){
                     ErrorMessage("The list of talks couldn't be fetched, please check your internet connection.")
                 } else if (talkViewModel.listTalks.count > 0) {
-                    SearchableTalkList(talks: talkViewModel.listTalks, refreshFunction: refreshTalkViewModel)
+                    SearchableTalkListView(talks: talkViewModel.listTalks, refreshFunction: refreshTalkViewModel)
                 } else {
                     HStack{
                         Spacer()

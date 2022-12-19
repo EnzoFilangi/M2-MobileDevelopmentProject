@@ -31,7 +31,7 @@ struct TalksListView: View {
                 .padding([.top, .bottom], 10)
             } else {
                 ForEach(displayedTalks, id: \.id) { record in
-                    NavigationLink(destination: TalkDetails(talk: record.fields)){
+                    NavigationLink(destination: TalkDetailsView(talk: record.fields)){
                         TalkCardView(talk: record.fields)
                             .padding([.top, .bottom], 10)
                     }

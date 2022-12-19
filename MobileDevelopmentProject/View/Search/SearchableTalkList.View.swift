@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchableTalkList: View {
+struct SearchableTalkListView: View {
     @StateObject var selectedTalkType = SelectedTalkTypeViewModel(possibleTypes: [])
     @State private var searchText = ""
     
@@ -60,7 +60,7 @@ struct SearchableTalkList: View {
     
     var body: some View {
         VStack {
-            TalkTypeSelector(data: selectedTalkType)
+            TalkTypeSelectorView(data: selectedTalkType)
             TalksListView(talks: talks, filter: applySearch)
                 .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Talk name, speaker, location...")
                 .refreshable {
@@ -83,7 +83,7 @@ struct SearchableTalkList_Previews: PreviewProvider {
         ]
         
         return NavigationStack{
-            SearchableTalkList(talks: listTalks, refreshFunction: {})
+            SearchableTalkListView(talks: listTalks, refreshFunction: {})
         }
     }
 }

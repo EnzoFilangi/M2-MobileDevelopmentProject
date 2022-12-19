@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpeakerDetail: View {
+struct SpeakerDetailView: View {
     let speaker : Speaker
     
     init(speaker: Speaker) {
@@ -73,7 +73,7 @@ struct SpeakerDetail: View {
 struct SpeakerDetail_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            SpeakerDetail(speaker: Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com"))
+            SpeakerDetailView(speaker: Speaker(name: "Mattheus Anderson", role: "CEO", company: "Home SecurTech", phone: "(123) 456-7890", email: "mattheus@email.com"))
         }
     }
 }

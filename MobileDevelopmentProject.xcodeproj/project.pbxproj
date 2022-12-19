@@ -39,7 +39,7 @@
 		A9D63B0929506777004287BC /* ErrorMessage.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0829506777004287BC /* ErrorMessage.View.swift */; };
 		A9D63B0B2950687A004287BC /* SearchableTalkList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0A2950687A004287BC /* SearchableTalkList.View.swift */; };
 		A9D63B0D2950736C004287BC /* TalkTypeSelector.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0C2950736C004287BC /* TalkTypeSelector.View.swift */; };
-		A9D63B102950742B004287BC /* TalkTypeSelector.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0F2950742B004287BC /* TalkTypeSelector.ViewModel.swift */; };
+		A9D63B102950742B004287BC /* SelectedTalkType.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +95,7 @@
 		A9D63B0829506777004287BC /* ErrorMessage.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.View.swift; sourceTree = "<group>"; };
 		A9D63B0A2950687A004287BC /* SearchableTalkList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTalkList.View.swift; sourceTree = "<group>"; };
 		A9D63B0C2950736C004287BC /* TalkTypeSelector.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTypeSelector.View.swift; sourceTree = "<group>"; };
-		A9D63B0F2950742B004287BC /* TalkTypeSelector.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTypeSelector.ViewModel.swift; sourceTree = "<group>"; };
+		A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTalkType.ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +134,7 @@
 		A925C419294D0BFD002747F1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A9C5564A2949E3A8008B465E /* TopTabBar */,
 				A925C41A294D0C15002747F1 /* ColoredTextPill.View.swift */,
 				A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */,
 				A9D63B0829506777004287BC /* ErrorMessage.View.swift */,
@@ -264,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				A9C556412949CBA5008B465E /* Talks.View.swift */,
-				A9C5564A2949E3A8008B465E /* TopTabBar */,
 				A9C5565D294A15A2008B465E /* TalkCard.View.swift */,
 				A9BE0957294B2CDA003180FB /* TalksList.View.swift */,
 				A925C417294D0875002747F1 /* TalkDetails.View.swift */,
@@ -312,7 +312,7 @@
 		A9D63B0E29507416004287BC /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				A9D63B0F2950742B004287BC /* TalkTypeSelector.ViewModel.swift */,
+				A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -459,7 +459,7 @@
 				A9C556172949C26B008B465E /* Main.View.swift in Sources */,
 				A9225FA0294B5380000BEAD8 /* DataSource.swift in Sources */,
 				A9C556502949EB4C008B465E /* TopTabBar.View.swift in Sources */,
-				A9D63B102950742B004287BC /* TalkTypeSelector.ViewModel.swift in Sources */,
+				A9D63B102950742B004287BC /* SelectedTalkType.ViewModel.swift in Sources */,
 				A9D63B0929506777004287BC /* ErrorMessage.View.swift in Sources */,
 				A9D63B0D2950736C004287BC /* TalkTypeSelector.View.swift in Sources */,
 				A9C556442949CBAF008B465E /* Speakers.View.swift in Sources */,
