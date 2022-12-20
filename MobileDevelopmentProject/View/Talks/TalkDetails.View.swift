@@ -12,32 +12,10 @@ struct TalkDetailsView: View {
     let talk : Talk
     
     let eventStore : EKEventStore = EKEventStore()
+    @State private var calendarAlert = false
     
     init(talk: Talk) {
         self.talk = talk
-    }
-    
-    /**
-     Extract the day of the week from {date}
-     */
-    private func formatDayOfWeek(date: Date) -> String {
-        return date.formatted(
-            .dateTime
-                .weekday(.wide)
-        )
-    }
-    
-    /**
-     Formats {start} and {end} into the string "{start hour}:{start minute} {AM/PM} - {end hour}:{end minute} {AM/PM}"
-     */
-    private func formatHours(start: Date, end: Date) -> String {
-        return start.formatted(
-            .dateTime
-                .hour().minute()
-        ) + " - " + end.formatted(
-            .dateTime
-                .hour().minute()
-        )
     }
     
     /**
@@ -45,22 +23,26 @@ struct TalkDetailsView: View {
      */
     private func saveToCalendar(){
         eventStore.requestAccess(to: .event) { (granted, error) in
-          if (granted) && (error == nil) {
-              
-              let event:EKEvent = EKEvent(eventStore: eventStore)
-              
-              event.title = talk.activity
-              event.startDate = talk.start
-              event.endDate = talk.end
-              event.notes = talk.speakers?.reduce("Speakers : \n", { partialResult, name in
-                  partialResult + "\n" + name
-              })
-              event.location = talk.location
-              event.calendar = eventStore.defaultCalendarForNewEvents
-              do {
-                  try eventStore.save(event, span: .thisEvent)
-              } catch _ {}
-          }
+            if (granted) && (error == nil) {
+                
+                let event:EKEvent = EKEvent(eventStore: eventStore)
+                
+                event.title = talk.activity
+                event.startDate = talk.start
+                event.endDate = talk.end
+                event.notes = talk.speakers?.reduce("Speakers : \n", { partialResult, name in
+                    partialResult + "\n" + name
+                })
+                event.location = talk.location
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                } catch _ {
+                    calendarAlert = true;
+                }
+            } else {
+                calendarAlert = true;
+            }
         }
     }
     
@@ -71,8 +53,8 @@ struct TalkDetailsView: View {
                 .fontWeight(.semibold)
                 .padding(.bottom, 1)
             VStack (alignment: .leading) {
-                Text(formatDayOfWeek(date: talk.start))
-                Text(formatHours(start: talk.start, end: talk.end))
+                Text(talk.formatDay())
+                Text(talk.formatHours())
             }
             .padding(.bottom, 20)
             if(talk.speakers != nil){
@@ -120,6 +102,9 @@ struct TalkDetailsView: View {
         .padding()
         .navigationTitle("Talk details")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Cannot add the event to your calendar. Please ensure you have given the app access.", isPresented: $calendarAlert) {
+            Button("OK", role: .cancel) { }
+        }
     }
 }
 

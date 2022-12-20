@@ -14,36 +14,13 @@ struct TalkCardView: View {
         self.talk = talk
     }
     
-    /**
-     Formats the given {day} into the string "{day of the week}, {month} {day number}, {year}"
-     */
-    private func formatTalkDay(day: Date) -> String {
-        return day.formatted(
-            .dateTime
-                .weekday(.wide).day().month(.wide).year()
-        )
-    }
-    
-    /**
-    Formats {start} and {end} into the string "{start hour}:{start minute} {AM/PM} - {end hour}:{end minute} {AM/PM}"
-     */
-    private func formatTalkHours(start: Date, end: Date) -> String {
-        return start.formatted(
-            .dateTime
-                .hour().minute()
-        ) + " - " + end.formatted(
-            .dateTime
-                .hour().minute()
-        )
-    }
-    
     var body: some View {
         VStack (alignment: .leading) {
             HStack {
-                Text(formatTalkDay(day: talk.start))
+                Text(talk.formatDay())
                     .font(.caption)
                 Spacer()
-                Text(formatTalkHours(start: talk.start, end: talk.end))
+                Text(talk.formatHours())
                     .font(.caption)
             }
             Text(talk.activity)

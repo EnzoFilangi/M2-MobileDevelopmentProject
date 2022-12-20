@@ -21,6 +21,29 @@ struct Talk: Codable {
         case start = "Start"
         case location = "Location"
     }
+    
+    /**
+     Formats the start date into the string "{day of the week}, {month} {day number}, {year}"
+     */
+    func formatDay() -> String {
+        return start.formatted(
+            .dateTime
+                .weekday(.wide).day().month(.wide).year()
+        )
+    }
+    
+    /**
+     Formats start and end dates into the string "{start hour}:{start minute} {AM/PM} - {end hour}:{end minute} {AM/PM}"
+     */
+    func formatHours() -> String {
+        return start.formatted(
+            .dateTime
+                .hour().minute()
+        ) + " - " + end.formatted(
+            .dateTime
+                .hour().minute()
+        )
+    }
 }
 
 /**
