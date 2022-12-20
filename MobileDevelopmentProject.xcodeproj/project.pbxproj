@@ -7,13 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9225F9E294B50C4000BEAD8 /* ApiResponseGeneric.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */; };
+		A9225FA0294B5380000BEAD8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225F9F294B5380000BEAD8 /* DataSource.swift */; };
+		A9225FA3294B5A6A000BEAD8 /* Speaker.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */; };
+		A925C418294D0875002747F1 /* TalkDetails.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925C417294D0875002747F1 /* TalkDetails.View.swift */; };
+		A925C41B294D0C15002747F1 /* ColoredTextPill.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A925C41A294D0C15002747F1 /* ColoredTextPill.View.swift */; };
+		A92EEC23294FC02F00677078 /* SpeakerDetail.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92EEC22294FC02F00677078 /* SpeakerDetail.View.swift */; };
+		A92EEC25294FC2AE00677078 /* TextIconButton.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */; };
+		A99CE783294F5E6400CD3180 /* SpeakersList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */; };
+		A99CE785294F608000CD3180 /* SpeakerCard.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE784294F608000CD3180 /* SpeakerCard.View.swift */; };
+		A99CE788294F687D00CD3180 /* Speakers.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */; };
+		A9BE0956294B202A003180FB /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0955294B202A003180FB /* HttpError.swift */; };
+		A9BE0958294B2CDA003180FB /* TalksList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BE0957294B2CDA003180FB /* TalksList.View.swift */; };
 		A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556142949C26B008B465E /* MobileDevelopmentProjectApp.swift */; };
-		A9C556172949C26B008B465E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556162949C26B008B465E /* ContentView.swift */; };
+		A9C556172949C26B008B465E /* Main.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556162949C26B008B465E /* Main.View.swift */; };
 		A9C556192949C26C008B465E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C556182949C26C008B465E /* Assets.xcassets */; };
 		A9C5561C2949C26C008B465E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C5561B2949C26C008B465E /* Preview Assets.xcassets */; };
 		A9C556262949C26C008B465E /* MobileDevelopmentProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556252949C26C008B465E /* MobileDevelopmentProjectTests.swift */; };
 		A9C556302949C26C008B465E /* MobileDevelopmentProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5562F2949C26C008B465E /* MobileDevelopmentProjectUITests.swift */; };
 		A9C556322949C26C008B465E /* MobileDevelopmentProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556312949C26C008B465E /* MobileDevelopmentProjectUITestsLaunchTests.swift */; };
+		A9C556422949CBA5008B465E /* Talks.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556412949CBA5008B465E /* Talks.View.swift */; };
+		A9C556442949CBAF008B465E /* Speakers.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556432949CBAF008B465E /* Speakers.View.swift */; };
+		A9C556462949CBBE008B465E /* Search.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556452949CBBE008B465E /* Search.View.swift */; };
+		A9C556492949DF85008B465E /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C556482949DF85008B465E /* CustomColors.swift */; };
+		A9C5564C2949E3C2008B465E /* TopTabBarButton.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564B2949E3C2008B465E /* TopTabBarButton.View.swift */; };
+		A9C5564E2949E770008B465E /* TopTabBarTabSelector.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564D2949E770008B465E /* TopTabBarTabSelector.View.swift */; };
+		A9C556502949EB4C008B465E /* TopTabBar.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5564F2949EB4C008B465E /* TopTabBar.View.swift */; };
+		A9C55659294A13D4008B465E /* TalkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C55658294A13D4008B465E /* TalkModel.swift */; };
+		A9C5565E294A15A2008B465E /* TalkCard.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5565D294A15A2008B465E /* TalkCard.View.swift */; };
+		A9C55664294A2169008B465E /* Talks.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C55663294A2169008B465E /* Talks.ViewModel.swift */; };
+		A9D63B0929506777004287BC /* ErrorMessage.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0829506777004287BC /* ErrorMessage.View.swift */; };
+		A9D63B0B2950687A004287BC /* SearchableTalkList.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0A2950687A004287BC /* SearchableTalkList.View.swift */; };
+		A9D63B0D2950736C004287BC /* TalkTypeSelector.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0C2950736C004287BC /* TalkTypeSelector.View.swift */; };
+		A9D63B102950742B004287BC /* SelectedTalkType.ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */; };
+		A9D63B122950FFC7004287BC /* DateChooser.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B112950FFC7004287BC /* DateChooser.View.swift */; };
+		A9D63B142951020E004287BC /* ObservableDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D63B132951020E004287BC /* ObservableDate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +62,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseGeneric.swift; sourceTree = "<group>"; };
+		A9225F9F294B5380000BEAD8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.Model.swift; sourceTree = "<group>"; };
+		A925C417294D0875002747F1 /* TalkDetails.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkDetails.View.swift; sourceTree = "<group>"; };
+		A925C41A294D0C15002747F1 /* ColoredTextPill.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredTextPill.View.swift; sourceTree = "<group>"; };
+		A92EEC22294FC02F00677078 /* SpeakerDetail.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetail.View.swift; sourceTree = "<group>"; };
+		A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIconButton.View.swift; sourceTree = "<group>"; };
+		A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersList.View.swift; sourceTree = "<group>"; };
+		A99CE784294F608000CD3180 /* SpeakerCard.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCard.View.swift; sourceTree = "<group>"; };
+		A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speakers.ViewModel.swift; sourceTree = "<group>"; };
+		A9BE0955294B202A003180FB /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		A9BE0957294B2CDA003180FB /* TalksList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalksList.View.swift; sourceTree = "<group>"; };
 		A9C556112949C26B008B465E /* MobileDevelopmentProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileDevelopmentProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C556142949C26B008B465E /* MobileDevelopmentProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevelopmentProjectApp.swift; sourceTree = "<group>"; };
-		A9C556162949C26B008B465E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A9C556162949C26B008B465E /* Main.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.View.swift; sourceTree = "<group>"; };
 		A9C556182949C26C008B465E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C5561B2949C26C008B465E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9C556212949C26C008B465E /* MobileDevelopmentProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileDevelopmentProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +84,22 @@
 		A9C5562B2949C26C008B465E /* MobileDevelopmentProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileDevelopmentProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C5562F2949C26C008B465E /* MobileDevelopmentProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevelopmentProjectUITests.swift; sourceTree = "<group>"; };
 		A9C556312949C26C008B465E /* MobileDevelopmentProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDevelopmentProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9C556412949CBA5008B465E /* Talks.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talks.View.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		A9C556432949CBAF008B465E /* Speakers.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speakers.View.swift; sourceTree = "<group>"; };
+		A9C556452949CBBE008B465E /* Search.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.View.swift; sourceTree = "<group>"; };
+		A9C556482949DF85008B465E /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		A9C5564B2949E3C2008B465E /* TopTabBarButton.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarButton.View.swift; sourceTree = "<group>"; };
+		A9C5564D2949E770008B465E /* TopTabBarTabSelector.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBarTabSelector.View.swift; sourceTree = "<group>"; };
+		A9C5564F2949EB4C008B465E /* TopTabBar.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.View.swift; sourceTree = "<group>"; };
+		A9C55658294A13D4008B465E /* TalkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkModel.swift; sourceTree = "<group>"; };
+		A9C5565D294A15A2008B465E /* TalkCard.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkCard.View.swift; sourceTree = "<group>"; };
+		A9C55663294A2169008B465E /* Talks.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talks.ViewModel.swift; sourceTree = "<group>"; };
+		A9D63B0829506777004287BC /* ErrorMessage.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.View.swift; sourceTree = "<group>"; };
+		A9D63B0A2950687A004287BC /* SearchableTalkList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableTalkList.View.swift; sourceTree = "<group>"; };
+		A9D63B0C2950736C004287BC /* TalkTypeSelector.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTypeSelector.View.swift; sourceTree = "<group>"; };
+		A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTalkType.ViewModel.swift; sourceTree = "<group>"; };
+		A9D63B112950FFC7004287BC /* DateChooser.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateChooser.View.swift; sourceTree = "<group>"; };
+		A9D63B132951020E004287BC /* ObservableDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableDate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +127,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9225FA1294B5A5F000BEAD8 /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				A9225FA2294B5A6A000BEAD8 /* Speaker.Model.swift */,
+			);
+			path = Speakers;
+			sourceTree = "<group>";
+		};
+		A925C419294D0BFD002747F1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5564A2949E3A8008B465E /* TopTabBar */,
+				A925C41A294D0C15002747F1 /* ColoredTextPill.View.swift */,
+				A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */,
+				A9D63B0829506777004287BC /* ErrorMessage.View.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A99CE786294F687000CD3180 /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */,
+			);
+			path = Speakers;
+			sourceTree = "<group>";
+		};
 		A9C556082949C26B008B465E = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +177,12 @@
 		A9C556132949C26B008B465E /* MobileDevelopmentProject */ = {
 			isa = PBXGroup;
 			children = (
+				A9C556472949DF75008B465E /* Utils */,
+				A9C556402949CAAD008B465E /* ViewModel */,
+				A9C5563F2949CAA3008B465E /* View */,
+				A9C5563E2949CA9E008B465E /* Model */,
 				A9C556142949C26B008B465E /* MobileDevelopmentProjectApp.swift */,
-				A9C556162949C26B008B465E /* ContentView.swift */,
+				A9C556162949C26B008B465E /* Main.View.swift */,
 				A9C556182949C26C008B465E /* Assets.xcassets */,
 				A9C5561A2949C26C008B465E /* Preview Content */,
 			);
@@ -125,6 +212,115 @@
 				A9C556312949C26C008B465E /* MobileDevelopmentProjectUITestsLaunchTests.swift */,
 			);
 			path = MobileDevelopmentProjectUITests;
+			sourceTree = "<group>";
+		};
+		A9C5563E2949CA9E008B465E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9225FA1294B5A5F000BEAD8 /* Speakers */,
+				A9C55656294A13C4008B465E /* Talks */,
+				A9BE0955294B202A003180FB /* HttpError.swift */,
+				A9225F9D294B50C4000BEAD8 /* ApiResponseGeneric.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C5563F2949CAA3008B465E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A925C419294D0BFD002747F1 /* Common */,
+				A9C55653294A10FD008B465E /* Talks */,
+				A9C55654294A1107008B465E /* Speakers */,
+				A9C55655294A1115008B465E /* Search */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C556402949CAAD008B465E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9D63B0E29507416004287BC /* Search */,
+				A99CE786294F687000CD3180 /* Speakers */,
+				A9C55662294A2160008B465E /* Talks */,
+				A9225F9F294B5380000BEAD8 /* DataSource.swift */,
+				A9D63B132951020E004287BC /* ObservableDate.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A9C556472949DF75008B465E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A9C556482949DF85008B465E /* CustomColors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A9C5564A2949E3A8008B465E /* TopTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5564F2949EB4C008B465E /* TopTabBar.View.swift */,
+				A9C5564D2949E770008B465E /* TopTabBarTabSelector.View.swift */,
+				A9C5564B2949E3C2008B465E /* TopTabBarButton.View.swift */,
+			);
+			path = TopTabBar;
+			sourceTree = "<group>";
+		};
+		A9C55653294A10FD008B465E /* Talks */ = {
+			isa = PBXGroup;
+			children = (
+				A9C556412949CBA5008B465E /* Talks.View.swift */,
+				A9C5565D294A15A2008B465E /* TalkCard.View.swift */,
+				A9BE0957294B2CDA003180FB /* TalksList.View.swift */,
+				A925C417294D0875002747F1 /* TalkDetails.View.swift */,
+				A9D63B112950FFC7004287BC /* DateChooser.View.swift */,
+			);
+			path = Talks;
+			sourceTree = "<group>";
+		};
+		A9C55654294A1107008B465E /* Speakers */ = {
+			isa = PBXGroup;
+			children = (
+				A9C556432949CBAF008B465E /* Speakers.View.swift */,
+				A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */,
+				A99CE784294F608000CD3180 /* SpeakerCard.View.swift */,
+				A92EEC22294FC02F00677078 /* SpeakerDetail.View.swift */,
+			);
+			path = Speakers;
+			sourceTree = "<group>";
+		};
+		A9C55655294A1115008B465E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A9C556452949CBBE008B465E /* Search.View.swift */,
+				A9D63B0A2950687A004287BC /* SearchableTalkList.View.swift */,
+				A9D63B0C2950736C004287BC /* TalkTypeSelector.View.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A9C55656294A13C4008B465E /* Talks */ = {
+			isa = PBXGroup;
+			children = (
+				A9C55658294A13D4008B465E /* TalkModel.swift */,
+			);
+			path = Talks;
+			sourceTree = "<group>";
+		};
+		A9C55662294A2160008B465E /* Talks */ = {
+			isa = PBXGroup;
+			children = (
+				A9C55663294A2169008B465E /* Talks.ViewModel.swift */,
+			);
+			path = Talks;
+			sourceTree = "<group>";
+		};
+		A9D63B0E29507416004287BC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A9D63B0F2950742B004287BC /* SelectedTalkType.ViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +453,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9C556172949C26B008B465E /* ContentView.swift in Sources */,
+				A9C556462949CBBE008B465E /* Search.View.swift in Sources */,
+				A9C55659294A13D4008B465E /* TalkModel.swift in Sources */,
+				A925C418294D0875002747F1 /* TalkDetails.View.swift in Sources */,
+				A9225FA3294B5A6A000BEAD8 /* Speaker.Model.swift in Sources */,
+				A9C55664294A2169008B465E /* Talks.ViewModel.swift in Sources */,
+				A9D63B142951020E004287BC /* ObservableDate.swift in Sources */,
+				A9BE0956294B202A003180FB /* HttpError.swift in Sources */,
+				A9C556422949CBA5008B465E /* Talks.View.swift in Sources */,
+				A92EEC25294FC2AE00677078 /* TextIconButton.View.swift in Sources */,
+				A99CE785294F608000CD3180 /* SpeakerCard.View.swift in Sources */,
+				A9C556172949C26B008B465E /* Main.View.swift in Sources */,
+				A9225FA0294B5380000BEAD8 /* DataSource.swift in Sources */,
+				A9C556502949EB4C008B465E /* TopTabBar.View.swift in Sources */,
+				A9D63B102950742B004287BC /* SelectedTalkType.ViewModel.swift in Sources */,
+				A9D63B0929506777004287BC /* ErrorMessage.View.swift in Sources */,
+				A9D63B0D2950736C004287BC /* TalkTypeSelector.View.swift in Sources */,
+				A9C556442949CBAF008B465E /* Speakers.View.swift in Sources */,
+				A9C5565E294A15A2008B465E /* TalkCard.View.swift in Sources */,
+				A9C5564E2949E770008B465E /* TopTabBarTabSelector.View.swift in Sources */,
+				A99CE783294F5E6400CD3180 /* SpeakersList.View.swift in Sources */,
+				A99CE788294F687D00CD3180 /* Speakers.ViewModel.swift in Sources */,
+				A9C556492949DF85008B465E /* CustomColors.swift in Sources */,
+				A925C41B294D0C15002747F1 /* ColoredTextPill.View.swift in Sources */,
+				A9D63B122950FFC7004287BC /* DateChooser.View.swift in Sources */,
 				A9C556152949C26B008B465E /* MobileDevelopmentProjectApp.swift in Sources */,
+				A9D63B0B2950687A004287BC /* SearchableTalkList.View.swift in Sources */,
+				A9225F9E294B50C4000BEAD8 /* ApiResponseGeneric.swift in Sources */,
+				A9BE0958294B2CDA003180FB /* TalksList.View.swift in Sources */,
+				A9C5564C2949E3C2008B465E /* TopTabBarButton.View.swift in Sources */,
+				A92EEC23294FC02F00677078 /* SpeakerDetail.View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +644,11 @@
 				DEVELOPMENT_TEAM = 6AA5MVB7GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "The app needs to access your calendar so it can create a new event for this talk";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,11 +673,11 @@
 				DEVELOPMENT_TEAM = 6AA5MVB7GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "The app needs to access your calendar so it can create a new event for this talk";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
