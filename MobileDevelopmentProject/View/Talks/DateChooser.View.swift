@@ -28,6 +28,8 @@ struct DateChooserView: View {
                         .font(.title)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.01) // Shrink the text to fit on smaller screens
                     Text("Use the date picker below to choose what date the app thinks it is")
                         .multilineTextAlignment(.center)
                     Spacer()
