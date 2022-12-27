@@ -88,7 +88,7 @@ struct TalkDetailsView: View {
             HStack{
                 Spacer()
                 Button(action: saveToCalendar) {
-                    ColoredTextPill(text: "Add to calendar", backgroundColor: .accent, foregroundColor: .foreground, font: .title)
+                    ColoredTextPill(text: "Add to calendar", backgroundColor: .accent, foregroundColor: .white, font: .title)
                 }
                 Spacer()
             }

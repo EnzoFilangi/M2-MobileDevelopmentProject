@@ -43,7 +43,7 @@ struct DateChooserView: View {
                         actualDate.date = selectedDate
                         showingSheet = false
                     }){
-                        ColoredTextPill(text: "Done", backgroundColor: .accent, foregroundColor: .foreground, font: .title)
+                        ColoredTextPill(text: "Done", backgroundColor: .accent, foregroundColor: .white, font: .title)
                     }
                 }
                 .toolbar{
