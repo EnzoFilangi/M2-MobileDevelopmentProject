@@ -69,6 +69,7 @@
 		A925C41A294D0C15002747F1 /* ColoredTextPill.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredTextPill.View.swift; sourceTree = "<group>"; };
 		A92EEC22294FC02F00677078 /* SpeakerDetail.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetail.View.swift; sourceTree = "<group>"; };
 		A92EEC24294FC2AE00677078 /* TextIconButton.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextIconButton.View.swift; sourceTree = "<group>"; };
+		A95958B5296C276300EFCF51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A99CE782294F5E6400CD3180 /* SpeakersList.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersList.View.swift; sourceTree = "<group>"; };
 		A99CE784294F608000CD3180 /* SpeakerCard.View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCard.View.swift; sourceTree = "<group>"; };
 		A99CE787294F687D00CD3180 /* Speakers.ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speakers.ViewModel.swift; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		A9C556132949C26B008B465E /* MobileDevelopmentProject */ = {
 			isa = PBXGroup;
 			children = (
+				A95958B5296C276300EFCF51 /* Info.plist */,
 				A9C556472949DF75008B465E /* Utils */,
 				A9C556402949CAAD008B465E /* ViewModel */,
 				A9C5563F2949CAA3008B465E /* View */,
@@ -644,8 +646,8 @@
 				DEVELOPMENT_TEAM = 6AA5MVB7GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MobileDevelopmentProject/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "The app needs to access your calendar so it can create a new event for this talk";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -673,8 +675,8 @@
 				DEVELOPMENT_TEAM = 6AA5MVB7GF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MobileDevelopmentProject/Info.plist;
 				INFOPLIST_KEY_NSCalendarsUsageDescription = "The app needs to access your calendar so it can create a new event for this talk";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
