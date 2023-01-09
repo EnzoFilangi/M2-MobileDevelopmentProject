@@ -2,6 +2,8 @@
 # <p align="center">Efrei Mobile Development Project</p>
   
 This repo contains the submission of Samuel Bader and Enzo Filangi for the final project of the M2 Mobile Development course at Efrei Paris.
+
+The goal of this project was to build an iOS application for a convention which would display informations about all the talks that would happen at that conference. To train and demonstrate our understanding of the course material, we chose to use SwiftUI as the GUI framework for our app.
         
 ## Installation
 Open Xcode on a mac running macOS 12.6 Monterey or later
